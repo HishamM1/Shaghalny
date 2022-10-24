@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root{
+    --main-color:#FF5F00;
+    --secondary-color:#B20600;
+    --third-color:#00092C;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+
+/* Custom Buttons */
+
+.btn{
+    padding: 6px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.btn-primary{
+    background-color: #0046b2;
+}
+
+.btn-primary:hover{
+    background-color: #0047b2da;
+}
+
+.btn-success{
+    background-color: #34ac79;
+}
+
+.btn-success:hover{
+    background-color: #34ac7ab6;
+}
+
+.btn-danger{
+    background-color: #B20600;
+}
+
+.btn-danger:hover{
+    background-color: #B20600;
+}
+
+.btn-warning{
+    background-color: #ffca2c;
+}
+
+.btn-warning:hover{
+    background-color: #ffca2ca8;
+}
+
+.btn-dark{
+    background-color: black;
+}
+
+.btn-dark:hover{
+    background-color: rgba(0, 0, 0, 0.671);
+}
+
+.btn-light{
+    background-color: #e0e0e0;
+}
+
+.btn-light:hover{
+    background-color: #e0e0e0a6;
+}
+
+.btn-darkBlue{
+    background-color: #00092C;
+}
+
+.btn-darkBlue:hover{
+    background-color: #00092C;
+}
+
+.container{
+    padding-inline: 50px;
+    margin-inline: auto;
+}
+
+.logo{
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--main-color);
+}

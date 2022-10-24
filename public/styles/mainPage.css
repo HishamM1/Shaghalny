@@ -1,0 +1,140 @@
+
+.mainPage{
+    background: url("../Imgs/landingPage-1.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    transition: 2s;
+}
+
+/* Start NavBar */
+.navbar{
+    padding: 40px;
+}
+
+.navbar .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ @media(max-width:425px){ 
+    .navbar .container{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+.navbar .container .links{
+    display: flex;
+    align-items: center;
+}
+
+.navbar .container .links li{
+    margin-left: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    color: white;
+}
+
+.navbar .container .bars{
+    display: none;
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+@media(max-width:768px){
+    .navbar .container .links{
+        display: none;
+    }
+    .navbar .container .bars{
+        display: block;
+    }
+}
+/* End NavBar */
+
+/* Start landingPage */
+.landingPage{
+    height: calc(100vh - 11.3vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.landingPage .content{
+    padding:70px;
+    margin-inline: 40px;
+}
+
+@media(max-width:425px){ 
+    .landingPage .content{
+        padding: 0;
+    }
+}
+
+.landingPage .content p{
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.landingPage .searchBar {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+.landingPage .searchBar i{
+    position: absolute;
+    background-color: transparent;
+    color: var(--main-color);
+    font-size: 25px;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.landingPage .searchBar input{
+    width: 100%;
+    padding-block: 20px;
+    padding-left: 50px;
+    background-color: white;
+    font-size: 23px;
+    border: none;
+    border-radius: 5px;
+}
+
+.landingPage .searchBar input::placeholder{
+    font-size: 20px;
+}
+
+.landingPage .searchBar input:focus{
+    outline: none;
+}
+
+.landingPage .searchBar .submitBtn{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-inline: 10px;
+    width: 150px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 14px;
+    background-color: var(--main-color);
+}
+
+.landingPage .searchBar .submitBtn a{
+    color: white;
+}
+
+@media(max-width:650px){
+    .landingPage .searchBar .submitBtn{
+        display: none;
+    }
+}
+/* End landingPage */

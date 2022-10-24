@@ -1,0 +1,132 @@
+
+.login{
+    background: url("../Imgs/loginBG.jpg")  no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.login .loginContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    color: white;
+}
+
+.login .loginContainer .logoContainer{
+    margin-bottom: 30px;
+}
+
+.login .loginContainer .logoContainer .logo{
+    font-size: 40px;
+}
+
+.login .loginContainer .loginForm{
+    background-color: white;
+    color: black;
+    padding: 30px;
+    width: 500px;
+}
+
+@media (max-width:520px) {
+    .login .loginContainer .loginForm{
+        width: 400px;
+    }
+}
+
+@media (max-width:410px) {
+    .login .loginContainer .logo{
+        font-size: 25px;
+    }
+    .login .loginContainer .loginForm{
+        width:300px;
+    }
+}
+
+.login .loginContainer .loginForm p {
+    text-align: center;
+    font-size: 25px;
+    padding: 10px;
+}
+
+.login .loginContainer .loginForm .email ,
+.login .loginContainer .loginForm .password {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+
+.login .loginContainer .loginForm .email label,
+.login .loginContainer .loginForm .password label{
+    font-size: 18px;
+}
+
+.login .loginContainer .loginForm .email input,
+.login .loginContainer .loginForm .password input{
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    padding: 13px;
+    margin-top: 5px;
+}
+
+.login .loginContainer .loginForm .email input:focus,
+.login .loginContainer .loginForm .password input:focus{
+    border-color: var(--main-color);
+    outline: none;
+    box-shadow: 0 0 4px var(--main-color);
+}
+
+.login .loginContainer .loginForm .password input::-ms-clear,
+.login .loginContainer .loginForm .password input::-ms-reveal{
+    display: none;
+}
+
+.login .loginContainer .loginForm .password{
+    position: relative;
+}
+
+.login .loginContainer .loginForm .password #eye{
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    transform: translate(0,40%);
+    width: 10px;
+    cursor: pointer;
+    color: #7a797e;
+}
+
+.login .loginContainer .loginForm .signInBtn{
+    width: 100%;
+    border-radius: 0 ;
+    font-size: 15px;
+    margin-block: 10px;
+    padding: 10px;
+    background-color: var(--main-color);
+}
+
+.login .loginContainer .loginForm .forgotBtn{
+    text-align: center;
+    color: var(--main-color);
+    margin-bottom: 20px;
+}
+
+.login .loginContainer .loginForm .forgotBtn a{
+    color: var(--main-color);
+}
+
+.login .loginContainer .loginForm .footer{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login .loginContainer .loginForm .joinNowBtn{
+    text-align: center;
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+

@@ -1,0 +1,193 @@
+.signup{
+    background: url("../Imgs/signupBG.jpg");
+    background-repeat: no-repeat;
+    background-position: center center ;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.signup .signupContainer{
+    color: white;
+    padding-inline: 200px;
+    padding-block: 30px;
+    height: 100vh;
+}
+
+@media(max-width:1500px){
+    .signup .signupContainer{
+        padding-inline: 100px;
+    }
+}
+
+@media(max-width:1150px){
+    .signup .signupContainer{
+        padding-inline: 30px;
+    }
+}
+
+.signup .signupContainer .logoContainer{
+    margin-bottom: 50px;
+}
+
+.signup .signupContainer .content{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-block: 100px;
+}
+
+@media(max-width:1150px){
+    .signup .signupContainer .content{
+        display: block;
+        text-align: center;
+    }
+}
+
+/* Left Content  */
+
+.signup .signupContainer .left{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-block: 50px;
+}
+
+.signup .signupContainer .left h2{
+    font-size: 30px;
+}
+
+.signup .signupContainer .left .advantages{
+    font-size: 20px;
+    margin-block: 25px;
+}
+.signup .signupContainer .left .advantages li:not(:last-child){
+    margin-bottom: 15px;
+}
+
+/* Right Content  */
+
+.signup .signupContainer .right{
+    display: flex;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.signup .signupContainer .content .right .signupform{
+    background-color: white;
+    color: black;
+    padding: 30px;
+    width: 500px;
+    margin: auto;
+}
+
+
+@media (max-width:520px) {
+    .signup .signupContainer .signupform{
+        width: 400px;
+    }
+}
+
+@media (max-width:410px) {
+    .signup .signupContainer .logo{
+        font-size: 25px;
+    }
+    .signup .signupContainer .signupform{
+        width:300px;
+    }
+}
+
+.signup .signupContainer .signupform p {
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.signup .signupContainer .signupform .firstName ,
+.signup .signupContainer .signupform .lastName ,
+.signup .signupContainer .signupform .email ,
+.signup .signupContainer .signupform .password {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+
+.signup .signupContainer .signupform .firstName label,
+.signup .signupContainer .signupform .lastName label,
+.signup .signupContainer .signupform .email label,
+.signup .signupContainer .signupform .password label{
+    font-size: 18px;
+}
+
+.signup .signupContainer .signupform .firstName input,
+.signup .signupContainer .signupform .lastName input,
+.signup .signupContainer .signupform .email input,
+.signup .signupContainer .signupform .password input{
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    padding: 13px;
+    margin-top: 5px;
+}
+
+.signup .signupContainer .signupform .firstName input:focus,
+.signup .signupContainer .signupform .lastName input:focus,
+.signup .signupContainer .signupform .email input:focus,
+.signup .signupContainer .signupform .password input:focus{
+    border-color: var(--main-color);
+    outline: none;
+    box-shadow: 0 0 4px var(--main-color);
+}
+
+.signup .signupContainer .signupform .password input::-ms-clear,
+.signup .signupContainer .signupform .password input::-ms-reveal{
+    display: none;
+}
+
+.signup .signupContainer .signupform .password{
+    position: relative;
+}
+
+.signup .signupContainer .signupform .password #eye{
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    transform: translate(0,40%);
+    width: 10px;
+    cursor: pointer;
+    color: #7a797e;
+}
+
+.signup .signupContainer .signupform .signUpBtn{
+    width: 100%;
+    border-radius: 0 ;
+    font-size: 15px;
+    margin-block: 10px;
+    padding: 10px;
+    background-color: var(--main-color);
+}
+
+.signup .signupContainer .signupform .terms{
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.signup .signupContainer .signupform .terms a{
+    color: var(--main-color);
+}
+
+.signup .signupContainer .signupform .forgotBtn a{
+    color: var(--main-color);
+}
+
+.signup .signupContainer .signupform .footer{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup .signupContainer .signupform .joinNowBtn{
+    text-align: center;
+    color: var(--main-color);
+    cursor: pointer;
+}

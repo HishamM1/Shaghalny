@@ -1,0 +1,173 @@
+/* Start NavBar */
+.navbar {
+  padding: 20px;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 425px) {
+  .navbar .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.navbar .container .links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .container .links li:first-child a {
+  color: black;
+}
+
+.navbar .container .links li {
+  margin-left: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  color: white;
+}
+
+.navbar .container .bars {
+  display: none;
+  color: white;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+@media (max-width: 768px) {
+  .navbar .container .links {
+    display: none;
+  }
+  .navbar .container .bars {
+    display: block;
+  }
+}
+/* End NavBar */
+
+/* Start Subheader  */
+.subheader {
+  padding: 20px;
+  background-color: var(--third-color);
+  color: white;
+}
+/* End Subheader  */
+
+/* Start Content */
+.content {
+  padding: 20px;
+  background-color: #f6f6f6;
+}
+
+.content .container {
+  display: flex;
+}
+
+.content .container .filterSection {
+  flex: 20%;
+  border: 2px solid #ccc;
+  padding: 20px 15px;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 20px;
+  height: 100%;
+}
+
+@media (max-width:1220px) {
+  .content .container .filterSection {
+        display: none;
+    }
+}
+
+.content .filterChoice:not(:last-child) {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.content .filterChoice .filterContent {
+  margin-top: 15px;
+  padding: 0 10px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+  width: 100%;
+}
+
+.content .container .filterContent input[type=checkbox]{
+    background-color: red;
+    color: red;
+}
+
+.content .filterChoice .filterContent .check-box{
+    padding: 5px;
+    font-size: 17px;
+}
+
+.collapsible {
+  cursor: pointer;
+}
+
+.collapsible:after {
+  content: '\02795';
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+    content: "\2796"; 
+  }
+
+.content .container .jobsSection {
+  flex: 80%;
+  margin-left: 20px;
+}
+
+@media (max-width:1220px) {
+  .content .container .jobsSection {
+        margin: 0;
+    }
+}
+
+.content .container .jobsSection .box{
+    background-color: white;
+    padding: 35px;
+    margin-bottom: 15px;
+}
+.content .container .jobsSection .box .title{
+    color: var(--main-color);
+}
+.content .container .jobsSection .box .location{
+    color: black;
+    margin-block: 10px;
+}
+.content .container .jobsSection .box .createdAt{
+    color: rgb(53, 175, 53);
+    margin-block: 5px;
+    font-weight: bold;
+}
+
+.content .container .jobsSection .box .jobTypeBtn{
+    background-color: rgb(226, 226, 226);
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 6px;
+}
+.content .container .jobsSection .box .description{
+    margin-top: 9px;
+}
+
+@media (max-width:650px) {
+ .container{
+    padding: 0px;
+    }
+}
+
+/* End Content */
