@@ -8,53 +8,6 @@
     transition: 2s;
 }
 
-/* Start NavBar */
-.navbar{
-    padding: 40px;
-}
-
-.navbar .container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
- @media(max-width:425px){ 
-    .navbar .container{
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-}
-
-.navbar .container .links{
-    display: flex;
-    align-items: center;
-}
-
-.navbar .container .links li{
-    margin-left: 20px;
-    font-size: 18px;
-    cursor: pointer;
-    color: white;
-}
-
-.navbar .container .bars{
-    display: none;
-    color: white;
-    cursor: pointer;
-    font-size: 30px;
-}
-
-@media(max-width:768px){
-    .navbar .container .links{
-        display: none;
-    }
-    .navbar .container .bars{
-        display: block;
-    }
-}
-/* End NavBar */
-
 /* Start landingPage */
 .landingPage{
     height: calc(100vh - 11.3vh);

@@ -36,7 +36,7 @@
                     <a href="#">Forgot password?</a>
                 </div>
                 <hr>
-                <div class="footer">New to Shaghalny? <a href="/signup" class="joinNowBtn">Join Now</a></div>
+                <div class="footer">New to Shaghalny? <a href="/employer" class="joinNowBtn">Join Now</a></div>
             </form>
         </div>
     </div>

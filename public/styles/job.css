@@ -1,0 +1,94 @@
+body{
+    background-color: #f6f6f6;
+}
+
+/* Navbar */
+.navbar{
+    padding: 20px;
+}
+
+.container{
+    padding-inline: 12rem;
+    margin-inline: auto;
+}
+
+.job{
+    padding: 20px;
+}
+
+.job .mainCard{
+    position: relative;
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid rgb(216, 216, 216);
+    border-radius: 6px;
+}
+.job .mainCard .cardTitle{
+    font-size: 25px;
+}
+.job .mainCard img{
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    right: 50px;
+    top: 20%;
+    transform: translateY(-50%);
+}
+.job .mainCard .cardBody{
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(219, 219, 219);
+}
+.job .mainCard .cardBody .btns{
+    margin-block: 10px;
+}
+.job .mainCard .cardBody .location{
+    color: blue;
+}
+.job .mainCard .cardBody .companyName{
+    color: rgb(113, 123, 177);
+}
+.job .mainCard .cardBody .date{
+    font-size: 15px;
+    color: rgb(83, 83, 83);
+    margin-block: 3px 20px;
+}
+.job .mainCard .cardBody .openedJobs{
+    color: rgb(83, 83, 83);
+    margin-bottom: 10px;
+}
+.job .mainCard .cardBody .openedJobs span{
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+.job .mainCard .applyBtn{
+    margin-top: 20px;
+    font-size: 16px;    
+    color: white;
+    background-color: var(--main-color);
+    padding:9px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.job .jobDetails,
+.job .jobDesc{
+    background-color: white;
+    padding: 20px;
+    border: 1px solid rgb(216, 216, 216);
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.job .jobDetails .cardTitle,
+.job .jobDesc .cardTitle{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.job .jobDesc .cardBody{
+    list-style-type: disc;
+    padding: 20px;
+}
+  

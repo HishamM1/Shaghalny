@@ -19,7 +19,7 @@
     <!-- Start Subheader -->
     <div class="subheader">
         <div class="container">
-            <h2>{{ $searched }}</h2>
+            <h2>{{ $searched }} Jobs</h2>
         </div>
     </div>
     <!-- End Subheader -->
@@ -85,8 +85,11 @@
                 <div class="jobsSection">
                     @foreach ($jobs as $job)
                         <div class="box">
-                            <h2 class="title">{{ $job->title }}</h2>
-                            <div class="location">{{ $job->company->name }} - {{ $job->company->location }}</h3>
+                            <a href="/jobs/job"class="title">{{ $job->title }}</a>
+                            <img src="/Imgs/alexApps.png" alt="">
+                            <div class="details">
+                                <span class="companyName">{{ $job->company->name }}</span>
+                                <span class="location">- {{ $job->company->location }}</span>
                                 <div class="createdAt">{{ $job->created_at->diffForHumans() }}</div>
                                 <div class="jobType">
                                     <button class="jobTypeBtn">{{ $job->type }}</button>
