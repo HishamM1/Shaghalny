@@ -12,6 +12,17 @@ body{
     margin-inline: auto;
 }
 
+@media(max-width:1350px){
+    .container{
+        padding-inline: 6rem;
+    }
+}
+@media(max-width:1150px){
+    .container{
+        padding-inline: 1rem;
+    }
+}
+
 .job{
     padding: 20px;
 }
@@ -27,20 +38,19 @@ body{
 .job .mainCard .cardTitle{
     font-size: 25px;
 }
-.job .mainCard img{
-    position: absolute;
-    width: 100px;
-    height: 30px;
-    right: 50px;
-    top: 20%;
-    transform: translateY(-50%);
-}
+
 .job .mainCard .cardBody{
     padding-bottom: 10px;
     border-bottom: 1px solid rgb(219, 219, 219);
 }
 .job .mainCard .cardBody .btns{
     margin-block: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.job .mainCard .btns img{
+    width: 100px;
+    height: 30px;
 }
 .job .mainCard .cardBody .location{
     color: blue;
@@ -85,6 +95,30 @@ body{
 .job .jobDesc .cardTitle{
     font-weight: bold;
     margin-bottom: 10px;
+}
+
+.job .jobDetails span:first-child{
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: -0.4px;
+    line-height: 24px;
+    color: #4D6182;
+    width: 142px;
+    min-width: 200px;
+    display: inline-block;
+    margin-right: 8px;
+}
+.job .jobDetails span:nth-child(2){
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: -0.35px;
+    line-height: 22px;
+    display: inline-flex;
+    align-items: flex-start;
+    color: rgb(0, 20, 51);
+    width: fit-content;
 }
 
 .job .jobDesc .cardBody{

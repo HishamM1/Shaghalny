@@ -46,19 +46,19 @@
                         <p>Sign Up and Start Applying For Jobs</p>
                         <div class="firstName">
                             <label for="firstName">First Name</label>
-                            <input type="text" />
+                            <input type="text" required />
                         </div>
                         <div class="lastName">
                             <label for="lastName">Last Name</label>
-                            <input type="text" />
+                            <input type="text" required />
                         </div>
                         <div class="email">
                             <label for="Email">Email</label>
-                            <input type="email" />
+                            <input type="email" required />
                         </div>
                         <div class="password">
                             <label for="password">Password</label>
-                            <input type="password" id="password" />
+                            <input type="password" id="password" required />
                             <i class="fa-solid fa-eye" id="eye" onclick="toggle()"></i>
                         </div>
                         <button class="signUpBtn btn" type="submit">Sign Up</button>

@@ -24,11 +24,11 @@
                 <p>Welcome Back</p>
                 <div class="email">
                     <label for="Email">Email</label>
-                    <input type="email" placeholder="Email" />
+                    <input type="email" placeholder="Email" required/>
                 </div>
                 <div class="password">
                     <label for="password">Password</label>
-                    <input type="password" placeholder="Password" id="password" />
+                    <input type="password" placeholder="Password" id="password" required/>
                     <i class="fa-solid fa-eye" id="eye" onclick="toggle()"></i>
                 </div>
                 <button class="signInBtn btn" type="submit">Sign in</button>

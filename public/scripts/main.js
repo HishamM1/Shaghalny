@@ -1,5 +1,4 @@
 // SlideShow Bgs 
-console.log('Fares');
 let imgArr = ["landingPage-1.jpg", "landingPage-2.jpg", "landingPage-3.jpg", "landingPage-4.jpg", "landingPage-5.jpg", "landingPage-6.jpg", "landingPage-7.jpg"];
 let landingPage = document.querySelector(".mainPage");
 //function to randomize imgs

@@ -35,9 +35,13 @@ body{
 }
 
 @media (max-width:1220px) {
+  .content .container {
+    display: block;
+  }
   .content .container .filterSection {
-        display: none;
-    }
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
 }
 
 .content .filterChoice:not(:last-child) {

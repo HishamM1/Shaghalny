@@ -131,7 +131,7 @@ a{
 
 .navbar .container .bars{
     display: none;
-    color: white;
+    color: black;
     cursor: pointer;
     font-size: 30px;
 }

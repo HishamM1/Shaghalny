@@ -10,7 +10,7 @@
 
 /* Start landingPage */
 .landingPage{
-    height: calc(100vh - 11.3vh);
+    height: calc(100vh - 12.6vh);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,6 +66,19 @@
 
 .landingPage .searchBar input:focus{
     outline: none;
+}
+.landingPage .searchBar .availableJobs{
+    position: absolute;
+    right: 20%;
+    color: #ccc;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width:1070px) {
+    .landingPage .searchBar .availableJobs{
+        display: none;
+    }
 }
 
 .landingPage .searchBar .submitBtn{

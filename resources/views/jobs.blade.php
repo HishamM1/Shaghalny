@@ -32,6 +32,7 @@
             <div class="container">
                 <div class="filterSection">
                     <ul class="links">
+                        
                         <li class="filterChoice">
                             <div class="collapsible">Country</div>
                             <form class="filterContent">

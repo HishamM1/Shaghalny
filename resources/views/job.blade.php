@@ -20,10 +20,10 @@
         <div class="container">
             <div class="mainCard">
                 <div class="cardTitle">Vue.js Front-End Developer - (Remote)</div>
-                <img src="/Imgs/alexApps.png" alt="">
                 <div class="cardBody">
                     <div class="btns">
                         <button class="jobTypeBtn">Full Time</button>
+                        <img src="/Imgs/alexApps.png" alt="">
                     </div>
                     <div class="details">
                         <span class="location">Alexandria For Programming - </span>
@@ -40,6 +40,14 @@
                     <div class="experience">
                         <span>Experience Needed:</span>
                         <span>1 To 2 Years</span>
+                    </div>
+                    <div class="salary">
+                        <span>Salary:</span>
+                        <span>7000 to 7000 EGP Per Month</span>
+                    </div>
+                    <div class="category">
+                        <span>Job Cateogries:</span>
+                        <span>Category here</span>
                     </div>
                 </div>
             </div>
