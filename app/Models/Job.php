@@ -9,6 +9,17 @@ class Job extends Model
 {
     protected $table = 'jobs';
     use HasFactory;
+    public function scopeFilter($query, array $filters)
+    {
+        $query->when($filters['search'] ?? false, function ($query, $search) {
+            $query->where(fn ($query) => ($query->where('title', 'like', '%' . $search . '%')
+                ->orWhere('description', 'like', '%' . $search . '%')));
+        });
+
+        $query->when($filters['type'] ?? false, function ($query, $type) {
+            $query->where('type', 'like', '%' . $type . '%');
+        });
+    }
     public function company()
     {
         return $this->belongsTo(Company::class);

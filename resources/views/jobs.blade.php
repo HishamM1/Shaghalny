@@ -19,7 +19,7 @@
     <!-- Start Subheader -->
     <div class="subheader">
         <div class="container">
-            <h2>{{ $searched }} Jobs</h2>
+            <h2>{{ request('search') === null ? 'All Jobs' : request('search') }}</h2>
         </div>
     </div>
     <!-- End Subheader -->
@@ -65,18 +65,23 @@
                                 @endforeach
                             </form>
                         </li>
+
                         <li class="filterChoice">
                             <div class="collapsible">Job Type</div>
-                            <form class="filterContent">
+                            <form class="filterContent" method="GET" action="{{ url()->full() }}">
                                 <div class="check-box">
-                                    <input type="checkbox" id="checkbox0" checked>
+                                    <input type="checkbox" id="checkbox0" onChange="this.form.submit()">
                                     <label for="checkbox0">All ({{ count($jobtypes) }})</label>
                                 </div>
+                                @if (request('search'))
+                                    <input type="hidden" name="search" value="{{ request('search') }}">
+                                @endif
                                 @foreach ($jobtypes as $jobtype)
                                     <div class="check-box">
-                                        <input type="checkbox" id="checkbox{{ $loop->iteration }}">
+                                        <input type="checkbox" id="checkbox{{ $loop->iteration }}" name="type"
+                                            {{-- @if (request('type') == $jobtype) checked="checked" @endif --}} value="{{ $jobtype }}"
+                                            onChange="this.form.submit()">
                                         <label for="checkbox{{ $loop->iteration }}">{{ $jobtype }}</label>
-
                                     </div>
                                 @endforeach
                             </form>
