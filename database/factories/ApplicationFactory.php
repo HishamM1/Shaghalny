@@ -18,7 +18,7 @@ class ApplicationFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->name(),
+            'full_name' => fake()->name(),
             'email' => fake()->safeEmail(),
             'cv' => fake()->word(),
             'job_id' => Job::factory()

@@ -13,11 +13,18 @@ class Job extends Model
     {
         $query->when($filters['search'] ?? false, function ($query, $search) {
             $query->where(fn ($query) => ($query->where('title', 'like', '%' . $search . '%')
-                ->orWhere('description', 'like', '%' . $search . '%')));
+                ->orWhere('job_description', 'like', '%' . $search . '%')));
         });
 
         $query->when($filters['type'] ?? false, function ($query, $type) {
-            $query->where('type', 'like', '%' . $type . '%');
+            $query->whereIn('type', $type);
+        });
+
+        $query->when($filters['category'] ?? false, function ($query, $category) {
+            $query->whereIn('categories.category_name', $category);
+        });
+        $query->when($filters['country'] ?? false, function ($query, $country) {
+            $query->whereIn('location', $country);
         });
     }
     public function company()

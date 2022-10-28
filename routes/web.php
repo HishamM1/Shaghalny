@@ -16,15 +16,15 @@ use App\Models\Job;
 */
 
 Route::get('/', function () {
-    return view('mainPage');
+    return view('mainPage', ['jobscount' => Job::count()]);
 });
 Route::get('/jobs', [JobController::class, 'search']);
 
 Route::get('/job/{job}', [JobController::class, 'show']);
 
-Route::get('/jobs/job', function () {
-    return view('job');
-});
+// Route::get('/jobs/job', function () {
+//     return view('job');
+// });
 
 Route::get('/login', function () {
     return view('login');

@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('company_name');
             $table->string('industry');
-            $table->string('email')->unique();
+            $table->string('company_email')->unique();
             $table->string('password');
-            $table->text('description');
+            $table->text('company_description');
             $table->string('location');
         });
     }

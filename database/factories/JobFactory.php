@@ -22,7 +22,7 @@ class JobFactory extends Factory
             'title' => fake()->jobTitle(),
             'experience' => strval(fake()->randomDigit()),
             'type' => fake()->randomElement(['Full time', 'Part time', 'Internship', 'Remote']),
-            'description' => fake()->paragraph(),
+            'job_description' => fake()->paragraph(),
             'salary' => strval(fake()->randomDigit()),
             'company_id' => Company::factory(),
             'category_id' => Category::factory()

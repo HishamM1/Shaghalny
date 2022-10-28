@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('experience');
             $table->enum('type', ['Full time', 'Part time', 'Internship', 'Remote']);
-            $table->text('description');
+            $table->text('job_description');
             $table->string('salary');
             $table->foreignId('company_id');
             $table->foreignId('category_id');

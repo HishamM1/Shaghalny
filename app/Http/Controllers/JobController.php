@@ -14,11 +14,16 @@ class JobController extends Controller
     public function search()
     {
         return view('jobs', [
-            'jobs' => Job::latest()->filter(request(['search', 'type']))->get(),
+            'jobs' => Job::latest()
+                ->select("jobs.*", "categories.category_name", "companies.location")
+                ->join('categories', 'categories.id', '=', 'jobs.category_id')
+                ->join('companies', 'companies.id', '=', 'jobs.company_id')
+                ->filter(request(['search', 'type', 'category', 'country']))
+                ->paginate(6)->withQueryString(),
             'jobtypes' => Job::select('type')->distinct()->pluck('type'),
             'companies' => Company::all(),
             'countries' => Company::select('location')->distinct()->pluck('location'),
-            'categories' => Category::all(),
+            'categories' => Category::pluck("category_name")
         ]);
     }
 

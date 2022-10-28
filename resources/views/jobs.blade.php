@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="/styles/global.css">
     <!-- Css -->
     <link rel="stylesheet" href="/styles/jobs.css" />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <title>Jobs</title>
 </head>
 
@@ -32,18 +35,37 @@
             <div class="container">
                 <div class="filterSection">
                     <ul class="links">
-                        
+
                         <li class="filterChoice">
                             <div class="collapsible">Country</div>
-                            <form class="filterContent">
+                            <form class="filterContent" method="GET" action="{{ url()->full() }}">
                                 <div class="check-box">
-                                    <input type="checkbox" id="checkbox0" checked>
-                                    <label for="checkbox0">All ({{ count($countries) }})</label>
+                                    <input type="checkbox" id="countrycheckbox0"
+                                        onChange="window.location.href='{{ request()->fullUrlWithQuery(['country' => null]) }}'"
+                                        {{ request('country') === null ? 'checked' : '' }}>
+                                    <label for="countrycheckbox0">All</label>
                                 </div>
+                                @if (request('search'))
+                                    <input type="hidden" name="search" value="{{ request('search') }}">
+                                @endif
+                                @if (request('type'))
+                                    @foreach (request('type') as $type)
+                                        <input type="hidden" name="type[]" value="{{ $type }}">
+                                    @endforeach
+                                @endif
+                                @if (request('category'))
+                                    @foreach (request('category') as $cat)
+                                        <input type="hidden" name="category[]" value="{{ $cat }}">
+                                    @endforeach
+                                @endif
                                 @foreach ($countries as $country)
                                     <div class="check-box">
-                                        <input type="checkbox" id="checkbox{{ $loop->iteration }}">
-                                        <label for="checkbox{{ $loop->iteration }}">{{ $country }}</label>
+                                        <input type="checkbox" id="countrycheckbox{{ $loop->iteration }}"
+                                            name="country[]"
+                                            @if (request('country') != null) @foreach (request('country') as $cout) {{ $country === $cout ? 'checked' : '' }} @endforeach @endif
+                                            value="{{ $country }}" onChange="this.form.submit()">
+                                        <label for="countrycheckbox{{ $loop->iteration }}">{{ $country }}</label>
+
                                     </div>
                                 @endforeach
                             </form>
@@ -51,15 +73,34 @@
 
                         <li class="filterChoice">
                             <div class="collapsible">Job Category</div>
-                            <form class="filterContent">
+                            <form class="filterContent" method="GET" action="{{ url()->full() }}">
                                 <div class="check-box">
-                                    <input type="checkbox" id="checkbox1" checked>
-                                    <label for="checkbox1">All ({{ count($categories) }})</label>
+                                    <input type="checkbox" id="categorycheckbox0"
+                                        onChange="window.location.href='{{ request()->fullUrlWithQuery(['category' => null]) }}'"
+                                        {{ request('category') === null ? 'checked' : '' }}>
+                                    <label for="categorycheckbox0">All</label>
                                 </div>
+                                @if (request('search'))
+                                    <input type="hidden" name="search" value="{{ request('search') }}">
+                                @endif
+                                @if (request('type'))
+                                    @foreach (request('type') as $type)
+                                        <input type="hidden" name="type[]" value="{{ $type }}">
+                                    @endforeach
+                                @endif
+                                @if (request('country'))
+                                    @foreach (request('country') as $country)
+                                        <input type="hidden" name="country[]" value="{{ $country }}">
+                                    @endforeach
+                                @endif
                                 @foreach ($categories as $category)
                                     <div class="check-box">
-                                        <input type="checkbox" id="checkbox2">
-                                        <label for="checkbox2">{{ $category->name }}</label>
+                                        <input type="checkbox" id="categorycheckbox{{ $loop->iteration }}"
+                                            name="category[]"
+                                            @if (request('category') != null) @foreach (request('category') as $cat) {{ $category === $cat ? 'checked' : '' }} @endforeach @endif
+                                            value="{{ $category }}" onChange="this.form.submit()">
+                                        <label
+                                            for="categorycheckbox{{ $loop->iteration }}">{{ $category }}</label>
 
                                     </div>
                                 @endforeach
@@ -70,18 +111,30 @@
                             <div class="collapsible">Job Type</div>
                             <form class="filterContent" method="GET" action="{{ url()->full() }}">
                                 <div class="check-box">
-                                    <input type="checkbox" id="checkbox0" onChange="this.form.submit()">
-                                    <label for="checkbox0">All ({{ count($jobtypes) }})</label>
+                                    <input type="checkbox" id="typecheckbox0"
+                                        onChange="window.location.href='{{ request()->fullUrlWithQuery(['type' => null]) }}'"
+                                        {{ request('type') === null ? 'checked' : '' }}>
+                                    <label for="typecheckbox0">All</label>
                                 </div>
                                 @if (request('search'))
                                     <input type="hidden" name="search" value="{{ request('search') }}">
                                 @endif
+                                @if (request('category'))
+                                    @foreach (request('category') as $cat)
+                                        <input type="hidden" name="category[]" value="{{ $cat }}">
+                                    @endforeach
+                                @endif
+                                @if (request('country'))
+                                    @foreach (request('country') as $country)
+                                        <input type="hidden" name="country[]" value="{{ $country }}">
+                                    @endforeach
+                                @endif
                                 @foreach ($jobtypes as $jobtype)
                                     <div class="check-box">
-                                        <input type="checkbox" id="checkbox{{ $loop->iteration }}" name="type"
-                                            {{-- @if (request('type') == $jobtype) checked="checked" @endif --}} value="{{ $jobtype }}"
-                                            onChange="this.form.submit()">
-                                        <label for="checkbox{{ $loop->iteration }}">{{ $jobtype }}</label>
+                                        <input type="checkbox" id="typecheckbox{{ $loop->iteration }}" name="type[]"
+                                            @if (request('type') != null) @foreach (request('type') as $job) {{ $jobtype === $job ? 'checked' : '' }} @endforeach @endif
+                                            value="{{ $jobtype }}" onChange="this.form.submit()">
+                                        <label for="typecheckbox{{ $loop->iteration }}">{{ $jobtype }}</label>
                                     </div>
                                 @endforeach
                             </form>
@@ -91,23 +144,24 @@
                 <div class="jobsSection">
                     @foreach ($jobs as $job)
                         <div class="box">
-                            <a href="/jobs/job"class="title">{{ $job->title }}</a>
+                            <a href="/job/{{ $job->id }}"class="title">{{ $job->title }}</a>
                             <img src="/Imgs/alexApps.png" alt="">
                             <div class="details">
-                                <span class="companyName">{{ $job->company->name }}</span>
+                                <span class="companyName">{{ $job->company->company_name }}</span>
                                 <span class="location">- {{ $job->company->location }}</span>
                                 <div class="createdAt">{{ $job->created_at->diffForHumans() }}</div>
                                 <div class="jobType">
                                     <button class="jobTypeBtn">{{ $job->type }}</button>
                                 </div>
                                 <div class="description">
-                                    {{ $job->description }}
+                                    {{ $job->job_description }}
                                 </div>
                             </div>
                         </div>
                     @endforeach
                 </div>
     @endif
+    {{ $jobs->links() }}
     <!-- Jobs Section  -->
     <script src="/scripts/main.js"></script>
 </body>

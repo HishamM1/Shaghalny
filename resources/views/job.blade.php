@@ -19,18 +19,18 @@
     <div class="job">
         <div class="container">
             <div class="mainCard">
-                <div class="cardTitle">Vue.js Front-End Developer - (Remote)</div>
+                <div class="cardTitle">{{ $job->title }} - ({{ $job->type }})</div>
                 <div class="cardBody">
                     <div class="btns">
-                        <button class="jobTypeBtn">Full Time</button>
+                        <button class="jobTypeBtn">{{ $job->category->name }}</button>
                         <img src="/Imgs/alexApps.png" alt="">
                     </div>
                     <div class="details">
-                        <span class="location">Alexandria For Programming - </span>
-                        <span class="companyName">Bolkly, Alexandria</span>
+                        <span class="companyName">{{ $job->company->name }}</span>
+                        <span class="location">{{ $job->company->location }} </span>
                     </div>
-                    <div class="date">Posted 10 Days Ago</div>
-                    <div class="openedJobs"><span>80</span> Applicants for 1 Open Position</div>
+                    <div class="date">Posted {{ $job->created_at->diffForHumans() }}</div>
+                    {{-- <div class="openedJobs"><span>80</span> Applicants for 1 Open Position</div> --}}
                 </div>
                 <button class="applyBtn">Apply For Job</button>
             </div>
@@ -39,22 +39,22 @@
                 <div class="cardBody">
                     <div class="experience">
                         <span>Experience Needed:</span>
-                        <span>1 To 2 Years</span>
+                        <span>{{ $job->experience }} Years</span>
                     </div>
                     <div class="salary">
                         <span>Salary:</span>
-                        <span>7000 to 7000 EGP Per Month</span>
+                        <span>{{ $job->salary }}k Per Month</span>
                     </div>
                     <div class="category">
                         <span>Job Cateogries:</span>
-                        <span>Category here</span>
+                        <span>{{ $job->category->name }}</span>
                     </div>
                 </div>
             </div>
             <div class="jobDesc">
                 <div class="cardTitle">Job Description</div>
                 <ul class="cardBody">
-                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam earum ut asperiores tempore id ipsam maxime architecto minima voluptatum, temporibus minus quod velit nemo consequuntur distinctio quidem reprehenderit fuga soluta.</li>
+                    <li>{{ $job->description }}</li>
                 </ul>
             </div>
         </div>
