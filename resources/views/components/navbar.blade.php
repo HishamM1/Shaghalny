@@ -12,9 +12,7 @@
                         <li class="btn btn-darkBlue">Employer?</li>
                     </a>
                 </ul>
-                <div class="bars">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
+                <button class="toggle-menu"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
         <!-- End NavBar -->

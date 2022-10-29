@@ -129,21 +129,58 @@ a{
     color: white;
 }
 
-.navbar .container .bars{
+.navbar .container .toggle-menu{
     display: none;
     color: black;
     cursor: pointer;
     font-size: 30px;
+    background-color:transparent;
+    border: none;
+    position: relative;
 }
+.navbar .container .toggle-menu.menu-active::before {
+    content: "";
+    position: absolute;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+    bottom: -12px;
+    left: 3px;
+  }
 
-@media(max-width:768px){
-    .navbar .container .links{
-        display: none;
+@media (max-width: 768px) {
+    .navbar .container .links {
+      display: none;
     }
-    .navbar .container .bars{
+    .navbar .container .toggle-menu {
+      display: block;
+    }
+    .navbar .container .links.open {
+      display: block;
+      background-color: #fff;
+      padding: 10px;
+      position: absolute;
+      right: 20px;
+      top: 89px;
+      width:90%;
+      border-radius: 4px;
+      z-index: 100;
+    }
+    .navbar .container .links.open li {
         display: block;
+        margin: 10px;
+        text-align: left;
+        background-color: transparent;
+        color: black;
+        font-weight: bold;
+        transition: 0.2s;
     }
-}
+    .navbar .container .links.open li:hover{
+        margin-left: 20px;
+        background-color: rgb(241, 241, 241);
+    }
+    
+  }
 /* End NavBar */
 
 .jobTypeBtn{

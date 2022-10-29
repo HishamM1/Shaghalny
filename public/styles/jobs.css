@@ -6,6 +6,22 @@ body{
 .navbar{
   padding: 20px;
 }
+.navbar .container .toggle-menu.menu-active::before {
+  bottom: -12px;
+  left: 3px;
+}
+@media (max-width: 768px) {
+  .navbar .container .links.open {
+    display: block;
+    background-color: #fff;
+    padding: 10px;
+    position: absolute;
+    right: 20px;
+    top: 69px;
+    width:90%;
+    border-radius: 4px;
+  }
+}
 
 /* Start Subheader  */
 .subheader {
