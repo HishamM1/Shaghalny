@@ -21,27 +21,31 @@ body{
   position: relative;
 }
 
-nav{
+.paginationContainer{
   position: absolute;
   bottom: -30px;
   left: 50%;
   transform: translateX(-50%);
   padding-block: 20px;
 }
-nav .pagination{
+.paginationContainer .pagination{
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 20px;
   width: 200px;
 }
-nav .pagination li{
+.paginationContainer .pagination .page-item.disabled{
+  color: rgb(161, 161, 161);
+  cursor: no-drop;
+}
+.paginationContainer .pagination li{
   position: relative;
 }
-nav .pagination li a{
+.paginationContainer .pagination li a{
   color: black;
 }
-nav .pagination li::after{
+.paginationContainer .pagination li::after{
   color: black;
   position: absolute;
   bottom: -18px;
@@ -167,3 +171,33 @@ nav .pagination li::after{
 }
 
 /* End Content */
+
+/* Start Error Page  */
+.errorPage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.errorPage .searchIcon i{
+  font-size: 90px;
+}
+.errorPage .text{
+  font-size: 25px;
+  font-style: italic;
+}
+.errorPage p{
+  color: rgb(116, 116, 116);
+  margin-block: 10px 20px;
+}
+.errorPage a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.errorPage a i{
+  margin-right: 10px;
+}
+/* End Error Page  */

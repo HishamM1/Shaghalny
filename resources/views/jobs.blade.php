@@ -26,7 +26,14 @@
 
     <!-- Jobs Section  -->
     @if (count($jobs) == 0)
-        <p>test</p>
+        <div class="errorPage">
+            <div class="searchIcon">
+                <i class="fa-brands fa-searchengin"></i>
+            </div>
+            <div class="text">No results found for the keyword “{{request('search')}}”</div>
+            <p>Please check the spelling or use a general search keyword</p>
+            <a href="/" class="btn btn-dark"><i class="fa-solid fa-arrow-left"></i>Back to search</a>
+        </div>
     @else
         <div class="content">
             <div class="container">

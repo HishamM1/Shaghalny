@@ -42,6 +42,7 @@ body{
 .job .mainCard .cardBody{
     padding-bottom: 10px;
     border-bottom: 1px solid rgb(219, 219, 219);
+    margin-bottom: 25px;
 }
 .job .mainCard .cardBody .btns{
     margin-block: 10px;
@@ -73,7 +74,6 @@ body{
     color: black;
 }
 .job .mainCard .applyBtn{
-    margin-top: 20px;
     font-size: 16px;    
     color: white;
     background-color: var(--main-color);

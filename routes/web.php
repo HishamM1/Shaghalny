@@ -22,9 +22,9 @@ Route::get('/jobs', [JobController::class, 'search']);
 
 Route::get('/job/{job}', [JobController::class, 'show']);
 
-// Route::get('/jobs/job', function () {
-//     return view('job');
-// });
+Route::get('/appForm', function () {
+    return view('applicationFormPage');
+});
 
 Route::get('/login', function () {
     return view('login');

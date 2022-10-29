@@ -1,0 +1,94 @@
+body{
+    background-color: #f6f6f6;
+}
+
+/* Navbar */
+.navbar{
+    padding: 20px;
+}
+
+.container{
+    padding-inline: 12rem;
+    margin-inline: auto;
+}
+
+@media(max-width:1350px){
+    .container{
+        padding-inline: 6rem;
+    }
+}
+@media(max-width:1150px){
+    .container{
+        padding-inline: 1rem;
+    }
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.appForm .container{
+    height: 90vh;
+}
+.appForm .container .card{
+    background-color: white;
+    border-radius: 10px;
+    max-width: 800px;
+}
+.appForm .container .cardHeader{
+    background-color: var(--third-color);
+    padding: 15px;
+    color: white;
+    border-radius: 10px;
+}
+.appForm .container .cardBody{
+    padding: 15px;
+    border-radius: 10px;
+}
+.appForm .container .cardBody .jobName{
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+.appForm .container .cardBody .message{
+    font-size: 15px;
+    color: rgb(77, 97, 130);
+    margin-block: 10px 20px;
+}
+.appForm .cardBody img{
+    width: 100px;
+    height: 30px;
+}
+.appForm .cardBody form textarea{
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    max-height: 100px;
+    resize: none;
+    padding: 10px;
+    border: 2px solid #ccc;
+    outline: none;
+}
+.appForm .cardBody form textarea::placeholder{
+    color: rgb(185, 188, 194);
+}
+.appForm .cardBody form .question{
+    margin-bottom: 20px;
+}
+.appForm .cardBody form .question label:first-child{
+    display: block;
+    margin-bottom: 10px;
+}
+.appForm .cardBody form .question .radioBtns{
+    display: flex;
+}
+.appForm .cardBody form .question .radioBtns label{
+    margin-inline: 4px 20px;
+}
+.appForm .cardBody form input[type=submit]{
+   font-size: 15px;
+   background-color: var(--third-color);
+}
