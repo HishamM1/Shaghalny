@@ -28,39 +28,68 @@
             </div>
             <div class="content">
                 <div class="left">
-                    <h2>Find the Best Jobs in Egypt</h2>
+                    <h2>Join 25,000+ Companies Hiring Top Talent Through WUZZUF</h2>
                     <ul class="advantages">
-                        <li><i class="fa-solid fa-circle-check"></i> <span>Apply for jobs
-                                easily</span></li>
-                        <li><i class="fa-solid fa-circle-check"></i> <span>Receive alerts
-                                for the best jobs</span></li>
-                        <li><i class="fa-solid fa-circle-check"></i> <span>Get discovered
-                                by top companies</span></li>
-                        <li><i class="fa-solid fa-circle-check"></i> <span>Explore the
-                                right jobs & career opportunities</span></li>
+                        <li><i class="fa-solid fa-circle-check"></i> <span>Reach 2,000,000+ qualified candidates.</span>
+                        </li>
+                        <li><i class="fa-solid fa-circle-check"></i> <span>Easily post professionally written
+                                jobs.</span></li>
+                        <li><i class="fa-solid fa-circle-check"></i> <span>Hire top talent faster and smarter.</span>
+                        </li>
+                        <li><i class="fa-solid fa-circle-check"></i> <span>Get personalized recruitment support.</span>
+                        </li>
                     </ul>
                     <h2>Trusted by over 25,000 companies</h2>
                 </div>
                 <div class="right">
-                    <form action="" class="signupform">
-                        <p>Sign Up and Start Applying For Jobs</p>
+                    <form method="POST" action="/employer" class="signupform">
+                        @csrf
+                        <p>Create a Company Account to Start Hiring Now</p>
                         <div class="firstName">
-                            <label for="firstName">First Name</label>
-                            <input type="text" required />
+                            <label for="firstName">Company Name</label>
+                            <input type="text" name="company_name" value="{{ old('company_name') }}" required />
+                            @error('company_name')
+                                <p class="error">{{ $message }}</p>
+                            @enderror
                         </div>
                         <div class="lastName">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" required />
+                            <label for="lastName">Industry</label>
+                            <input type="text" name="industry" value="{{ old('industry') }}" required />
+                            @error('industry')
+                                <p class="error">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="lastName">
+                            <label for="lastName">Company Description</label>
+                            <input type="text" name="company_description" value="{{ old('company_description') }}"
+                                required />
+                            @error('company_description')
+                                <p class="error">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="lastName">
+                            <label for="lastName">Location</label>
+                            <input type="text" name="location" value="{{ old('location') }}" required />
+                            @error('location')
+                                <p class="error">{{ $message }}</p>
+                            @enderror
                         </div>
                         <div class="email">
-                            <label for="Email">Email</label>
-                            <input type="email" required />
+                            <label for="Email">Company Email</label>
+                            <input type="text" name="company_email" value="{{ old('company_email') }}" required />
+                            @error('company_email')
+                                <p class="error">{{ $message }}</p>
+                            @enderror
                         </div>
                         <div class="password">
                             <label for="password">Password</label>
-                            <input type="password" id="password" required />
+                            <input type="password" name="password" id="password" required />
                             <i class="fa-solid fa-eye" id="eye" onclick="toggle()"></i>
+                            @error('password')
+                                <p class="error">{{ $message }}</p>
+                            @enderror
                         </div>
+
                         <button class="signUpBtn btn" type="submit">Sign Up</button>
                         <div class="terms">By signing up, you agree to our <a>Terms and
                                 Conditions</a></div>

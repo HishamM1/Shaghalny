@@ -22,11 +22,11 @@
                 <div class="cardTitle">{{ $job->title }} - ({{ $job->type }})</div>
                 <div class="cardBody">
                     <div class="btns">
-                        <button class="jobTypeBtn">{{ $job->category->name }}</button>
+                        <button class="jobTypeBtn">{{ $job->category->category_name }}</button>
                         <img src="/Imgs/alexApps.png" alt="">
                     </div>
                     <div class="details">
-                        <span class="companyName">{{ $job->company->name }}</span>
+                        <span class="companyName">{{ $job->company->company_name }}</span> -
                         <span class="location">{{ $job->company->location }} </span>
                     </div>
                     <div class="date">Posted {{ $job->created_at->diffForHumans() }}</div>
@@ -47,14 +47,14 @@
                     </div>
                     <div class="category">
                         <span>Job Cateogries:</span>
-                        <span>{{ $job->category->name }}</span>
+                        <span>{{ $job->category->category_name }}</span>
                     </div>
                 </div>
             </div>
             <div class="jobDesc">
                 <div class="cardTitle">Job Description</div>
                 <ul class="cardBody">
-                    <li>{{ $job->description }}</li>
+                    <li>{{ $job->job_description }}</li>
                 </ul>
             </div>
         </div>

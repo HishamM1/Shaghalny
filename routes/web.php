@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\EmployerController;
+use App\Http\Controllers\LogoutController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Job;
 
@@ -29,6 +31,6 @@ Route::get('/appForm', function () {
 Route::get('/login', function () {
     return view('login');
 });
-Route::get('/employer', function () {
-    return view('employer');
-});
+Route::get('/employer', [EmployerController::class, 'create'])->middleware('guest');
+Route::post('/employer', [EmployerController::class, 'store'])->middleware('guest');
+Route::post('/logout', [LogoutController::class, 'logout']);

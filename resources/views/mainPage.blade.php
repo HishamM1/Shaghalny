@@ -19,6 +19,13 @@
                 </form>
             </div>
         </div>
+        @if (session()->has('success'))
+            <div class="flashMessage">
+                <p>
+                    {{ session('success') }}
+                </p>
+            </div>
+        @endif
         <!-- End landingPage -->
     </div>
     <script src="/scripts/main.js"></script>
