@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('full_name');
             $table->string('email');
             $table->string('cv');
-            $table->foreignId('job_id');
+            $table->foreignId('job_id')->constrained()->cascadeOnDelete();
         });
     }
 

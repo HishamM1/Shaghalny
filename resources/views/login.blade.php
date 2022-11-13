@@ -20,17 +20,24 @@
             <div class="logoContainer">
                 <a href="/" class="logo">Shaghalny</a>
             </div>
-            <form action="" class="loginForm">
+            <form method="POST" action="/login" class="loginForm">
+                @csrf
                 <p>Welcome Back</p>
+                @error('loginerror')
+                    <span class="error">{{ $message }}</span>
+                @enderror
                 <div class="email">
                     <label for="Email">Email</label>
-                    <input type="email" placeholder="Email" required/>
+                    <input name="company_email" type="email" placeholder="Email" value="{{ old('company_email') }}"
+                        required />
                 </div>
+
                 <div class="password">
                     <label for="password">Password</label>
-                    <input type="password" placeholder="Password" id="password" required/>
+                    <input name="password" type="password" placeholder="Password" id="password" required />
                     <i class="fa-solid fa-eye" id="eye" onclick="toggle()"></i>
                 </div>
+
                 <button class="signInBtn btn" type="submit">Sign in</button>
                 <div class="forgotBtn">
                     <a href="#">Forgot password?</a>

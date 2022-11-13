@@ -42,21 +42,21 @@
                     <h2>Trusted by over 25,000 companies</h2>
                 </div>
                 <div class="right">
-                    <form method="POST" action="/employer" class="signupform">
+                    <form method="POST" action="/employer" class="signupform" enctype="multipart/form-data">
                         @csrf
                         <p>Create a Company Account to Start Hiring Now</p>
                         <div class="firstName">
                             <label for="firstName">Company Name</label>
                             <input type="text" name="company_name" value="{{ old('company_name') }}" required />
                             @error('company_name')
-                                <p class="error">{{ $message }}</p>
+                                <span class="error">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="lastName">
                             <label for="lastName">Industry</label>
                             <input type="text" name="industry" value="{{ old('industry') }}" required />
                             @error('industry')
-                                <p class="error">{{ $message }}</p>
+                                <span class="error">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="lastName">
@@ -64,31 +64,39 @@
                             <input type="text" name="company_description" value="{{ old('company_description') }}"
                                 required />
                             @error('company_description')
-                                <p class="error">{{ $message }}</p>
+                                <span class="error">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="lastName">
                             <label for="lastName">Location</label>
                             <input type="text" name="location" value="{{ old('location') }}" required />
                             @error('location')
-                                <p class="error">{{ $message }}</p>
+                                <span class="error">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="email">
                             <label for="Email">Company Email</label>
                             <input type="text" name="company_email" value="{{ old('company_email') }}" required />
                             @error('company_email')
-                                <p class="error">{{ $message }}</p>
+                                <span class="error">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="password">
                             <label for="password">Password</label>
                             <input type="password" name="password" id="password" required />
                             <i class="fa-solid fa-eye" id="eye" onclick="toggle()"></i>
-                            @error('password')
-                                <p class="error">{{ $message }}</p>
-                            @enderror
                         </div>
+                        @error('password')
+                            <span class="error">{{ $message }}</span>
+                        @enderror
+                        <div class="image">
+                            <label for="image">Company Image</label>
+                            <input type="file" name="image" id="image" value="{{ old('image') }}" required />
+
+                        </div>
+                        @error('image')
+                            <span class="error">{{ $message }}</span>
+                        @enderror
 
                         <button class="signUpBtn btn" type="submit">Sign Up</button>
                         <div class="terms">By signing up, you agree to our <a>Terms and

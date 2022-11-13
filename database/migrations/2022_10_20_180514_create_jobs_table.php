@@ -21,8 +21,8 @@ return new class extends Migration
             $table->enum('type', ['Full time', 'Part time', 'Internship', 'Remote']);
             $table->text('job_description');
             $table->string('salary');
-            $table->foreignId('company_id');
-            $table->foreignId('category_id');
+            $table->foreignId('company_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
         });
     }
 

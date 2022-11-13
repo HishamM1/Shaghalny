@@ -13,12 +13,16 @@
                             <li class="btn btn-darkBlue">Employer?</li>
                         </a>
                     </ul>
+                    <button class="toggle-menu"><i class="fa-solid fa-bars"></i></button>
                 @else
                     <span>Welcome, {{ auth()->user()->company_name }}!</span>
-                    <form method="post"action="/logout">
-                        @csrf
-                        <button type="submit" class="btn btn-danger">Log Out</button>
-                    </form>
+                    <ul class="links">
+                        <a href="/logout">
+                            <li class="btn btn-danger">Log out</li>
+                        </a>
+
+                    </ul>
+                    <button class="toggle-menu"><i class="fa-solid fa-bars"></i></button>
                 @endguest
             </div>
         </div>

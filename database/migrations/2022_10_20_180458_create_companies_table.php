@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->text('company_description');
             $table->string('location');
+            $table->string('image')->nullable();
         });
     }
 

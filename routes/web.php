@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\EmployerController;
-use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\LogController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Job;
 
@@ -20,6 +20,7 @@ use App\Models\Job;
 Route::get('/', function () {
     return view('mainPage', ['jobscount' => Job::count()]);
 });
+
 Route::get('/jobs', [JobController::class, 'search']);
 
 Route::get('/job/{job}', [JobController::class, 'show']);
@@ -28,9 +29,10 @@ Route::get('/appForm', function () {
     return view('applicationFormPage');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+
 Route::get('/employer', [EmployerController::class, 'create'])->middleware('guest');
 Route::post('/employer', [EmployerController::class, 'store'])->middleware('guest');
-Route::post('/logout', [LogoutController::class, 'logout']);
+
+Route::get('/login', [LogController::class, 'view'])->middleware('guest');
+Route::post('/login', [LogController::class, 'login'])->middleware('guest');
+Route::get('/logout', [LogController::class, 'logout'])->middleware('auth');

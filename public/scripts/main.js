@@ -1,5 +1,7 @@
 // toggleMenu
+
 let toggleMenueButton = document.querySelector(".toggle-menu")
+console.log(toggleMenueButton)
 let links = document.querySelector(".links")
 toggleMenueButton.onclick = function (e) {
     e.stopPropagation()
@@ -39,13 +41,13 @@ function toggle() {
 }
 
 // filterSection collapse
-var coll = document.getElementsByClassName("collapsible");
-var i;
+let coll = document.getElementsByClassName("collapsible");
+let i;
 
 for (i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function () {
     this.classList.toggle("active");
-    var content = this.nextElementSibling;
+    let content = this.nextElementSibling;
     if (content.style.maxHeight) {
       content.style.maxHeight = null;
     } else {
