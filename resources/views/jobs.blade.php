@@ -30,7 +30,7 @@
             <div class="searchIcon">
                 <i class="fa-brands fa-searchengin"></i>
             </div>
-            <div class="text">No results found for the keyword “{{request('search')}}”</div>
+            <div class="text">No results found for the keyword “{{ request('search') }}”</div>
             <p>Please check the spelling or use a general search keyword</p>
             <a href="/" class="btn btn-dark"><i class="fa-solid fa-arrow-left"></i>Back to search</a>
         </div>
@@ -149,7 +149,7 @@
                     @foreach ($jobs as $job)
                         <div class="box">
                             <a href="/job/{{ $job->id }}"class="title">{{ $job->title }}</a>
-                            <img src="/Imgs/alexApps.png" alt="">
+                            <img src="/Imgs/{{ $job->company->image }}" alt="Company doesn't have an image">
                             <div class="details">
                                 <span class="companyName">{{ $job->company->company_name }}</span>
                                 <span class="location">- {{ $job->company->location }}</span>

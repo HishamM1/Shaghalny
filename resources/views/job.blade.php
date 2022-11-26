@@ -23,7 +23,7 @@
                 <div class="cardBody">
                     <div class="btns">
                         <button class="jobTypeBtn">{{ $job->category->category_name }}</button>
-                        <img src="/Imgs/alexApps.png" alt="">
+                        <img src="/Imgs/{{ $job->company->image }}" alt="Company doesn't have an image">
                     </div>
                     <div class="details">
                         <span class="companyName">{{ $job->company->company_name }}</span> -

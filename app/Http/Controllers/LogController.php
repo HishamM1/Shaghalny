@@ -15,7 +15,7 @@ class LogController extends Controller
         return view('login');
     }
 
-    public function login():
+    public function login()
     {
         $user = request()->validate([
             'company_email' => ['required', 'email'],

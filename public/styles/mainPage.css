@@ -10,7 +10,7 @@
 
 /* Start landingPage */
 .landingPage{
-    height: calc(100vh - 12.6vh);
+    height: calc(98vh - 12.6vh);
     display: flex;
     justify-content: center;
     align-items: center;
