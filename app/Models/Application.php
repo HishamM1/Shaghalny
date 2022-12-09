@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Application extends Model
 {
     protected $table = 'applications';
+    protected $guarded = [];
+
     use HasFactory;
     public function job()
     {

@@ -18,7 +18,10 @@ return new class extends Migration
             $table->timestamps();
             $table->string('full_name');
             $table->string('email');
+            $table->string('number');
             $table->string('cv');
+            $table->string('finished_military');
+            $table->string('about_applier');
             $table->foreignId('job_id')->constrained()->cascadeOnDelete();
         });
     }

@@ -3,6 +3,7 @@
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\EmployerController;
 use App\Http\Controllers\LogController;
+use App\Http\Controllers\ApplicationController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Job;
 
@@ -36,3 +37,5 @@ Route::post('/employer', [EmployerController::class, 'store'])->middleware('gues
 Route::get('/login', [LogController::class, 'view'])->middleware('guest');
 Route::post('/login', [LogController::class, 'login'])->middleware('guest');
 Route::get('/logout', [LogController::class, 'logout'])->middleware('auth');
+Route::get('/appForm/{job}', [ApplicationController::class, 'show']);
+Route::post('/storeApplication', [ApplicationController::class, 'storeApplication']);

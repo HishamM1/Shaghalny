@@ -24,29 +24,65 @@
                 </div>
                 <div class="cardBody">
                     <div class="jobName">
-                        Vue.js Front-End Developer - (Remote)
-                        <img src="Imgs/alexApps.png" alt="">
+                        {{ $job->title }} - {{ $job->type }}
+                        <img src="Imgs/{{ $job->company->image }}" alt="">
                     </div>
-                    <div class="message">The hiring team at (JOBNAME) requires you to answer the below questions.</div>
-                    
-                    <form action="">
-                        <div class="experience question">
-                            <label>What is your experience with this job?</label>
-                            <textarea name="experience" id="" cols="20" rows="10" placeholder="Write your answer here.."></textarea>
+                    <div class="message">The hiring team at ({{ $job->company->company_name }}) requires you to answer
+                        the below questions.</div>
+
+                    <form action="/storeApplication" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <input type="text" value="{{ $job->id }}" name="job_id" hidden>
+                        <div>
+                            <label for="" style="display:block">Full Name:</label>
+                            <input type="text" name="full_name" placeholder="Your Full-Name"
+                                style="margin: 10px 0px 10px;padding:4px">
                         </div>
+                        @error('full_name')
+                            <span class="error">{{ $message }}</span>
+                        @enderror
+                        <div>
+                            <label for="" style="display: block">Email:</label>
+                            <input type="text" name="email" placeholder="Your Email"
+                                style="margin: 10px 0px 10px;padding:4px">
+                        </div>
+                        @error('email')
+                            <span class="error">{{ $message }}</span>
+                        @enderror
+                        <div>
+                            <label for="" style="display: block">Number:</label>
+                            <input type="tel" name="number" placeholder="Your Mobile Number"
+                                style="margin: 10px 0px 10px;padding:4px">
+                        </div>
+                        @error('number')
+                            <span class="error">{{ $message }}</span>
+                        @enderror
                         <div class="military question">
                             <label>Did you finish your military service?</label>
                             <div class="radioBtns">
-                                <input type="radio" id="Yes" name="Yes" value="Yes">
+                                <input type="radio" id="Yes" name="finished_military" value="Yes">
                                 <label for="Yes">Yes</label><br>
-                                <input type="radio" id="No" name="No" value="No">
+                                <input type="radio" id="No" name="finished_military" value="No">
                                 <label for="No">No</label><br>
                             </div>
                         </div>
+                        @error('finished_military')
+                            <span class="error">{{ $message }}</span>
+                        @enderror
                         <div class="unique question">
                             <label>Tell us about yourself. What makes you unique from other candidates?</label>
-                            <textarea name="unique" id="" cols="20" rows="10" placeholder="Write your answer here.."></textarea>
+                            <textarea name="about_applier" id="" cols="20" rows="10" placeholder="Write your answer here.."></textarea>
                         </div>
+                        @error('about_applier')
+                            <span class="error">{{ $message }}</span>
+                        @enderror
+                        <div>
+                            <label for="">CV:</label>
+                            <input type="file" name="cv" required style="margin: 10px 0px 10px;padding:4px">
+                        </div>
+                        @error('cv')
+                            <span class="error">{{ $message }}</span>
+                        @enderror
                         <input type="submit" class="btn" value="Submit Application"></input>
                     </form>
                 </div>
