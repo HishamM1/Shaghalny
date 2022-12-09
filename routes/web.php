@@ -23,13 +23,7 @@ Route::get('/', function () {
 });
 
 Route::get('/jobs', [JobController::class, 'search']);
-
 Route::get('/job/{job}', [JobController::class, 'show']);
-
-Route::get('/appForm', function () {
-    return view('applicationFormPage');
-});
-
 
 Route::get('/employer', [EmployerController::class, 'create'])->middleware('guest');
 Route::post('/employer', [EmployerController::class, 'store'])->middleware('guest');
@@ -37,5 +31,6 @@ Route::post('/employer', [EmployerController::class, 'store'])->middleware('gues
 Route::get('/login', [LogController::class, 'view'])->middleware('guest');
 Route::post('/login', [LogController::class, 'login'])->middleware('guest');
 Route::get('/logout', [LogController::class, 'logout'])->middleware('auth');
-Route::get('/appForm/{job}', [ApplicationController::class, 'show']);
-Route::post('/storeApplication', [ApplicationController::class, 'storeApplication']);
+
+Route::get('/appForm/{job}', [ApplicationController::class, 'show'])->middleware('guest');
+Route::post('/storeApplication', [ApplicationController::class, 'storeApplication'])->middleware('guest');
