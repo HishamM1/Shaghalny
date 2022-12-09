@@ -4,6 +4,7 @@ use App\Http\Controllers\JobController;
 use App\Http\Controllers\EmployerController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Job;
 
@@ -34,3 +35,7 @@ Route::get('/logout', [LogController::class, 'logout'])->middleware('auth');
 
 Route::get('/appForm/{job}', [ApplicationController::class, 'show'])->middleware('guest');
 Route::post('/storeApplication', [ApplicationController::class, 'storeApplication'])->middleware('guest');
+// TO DO
+Route::get('/dashboard/{company}', [DashboardController::class, 'show'])->middleware('auth');
+Route::get('/dashboard/delete/{job}', [DashboardController::class, 'delete'])->middleware('auth');
+Route::get('/dashboard/applications/{job}', [DashboardController::class, 'jobApplications']);

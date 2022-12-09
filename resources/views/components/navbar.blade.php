@@ -17,7 +17,7 @@
                 @else
                     <span>Welcome, {{ auth()->user()->company_name }}!</span>
                     <ul class="links">
-                        <a href="/dashboard">
+                        <a href="/dashboard/{{ auth()->user()->id }}">
                             <li class="btn btn-darkBlue">Dashboard</li>
                         </a>
                         <a href="/logout">
