@@ -1,4 +1,14 @@
 <x-head />
+<style>
+    .flashMessage {
+        background-color: #ff5f00;
+        color: white;
+        padding: 20px;
+        margin: 20px 0px 20px 50px;
+        width: fit-content;
+        border-radius: 10px
+    }
+</style>
 
 <body onload="randomizeImg();">
     <div class="mainPage">
@@ -18,14 +28,14 @@
                     <button type="submit" class="btn submitBtn">Search Jobs</button>
                 </form>
             </div>
+            @if (session()->has('success'))
+                <div class="flashMessage">
+                    <p>
+                        {{ session('success') }}
+                    </p>
+                </div>
+            @endif
         </div>
-        @if (session()->has('success'))
-            <div class="flashMessage">
-                <p>
-                    {{ session('success') }}
-                </p>
-            </div>
-        @endif
         <!-- End landingPage -->
     </div>
     <script src="/scripts/main.js"></script>

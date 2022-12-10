@@ -149,7 +149,7 @@
                     @foreach ($jobs as $job)
                         <div class="box">
                             <a href="/job/{{ $job->id }}"class="title">{{ $job->title }}</a>
-                            <img src="/Imgs/{{ $job->company->image }}" alt="Company doesn't have an image">
+                            <img src="/storage/{{ $job->company->image }}" alt="Company doesn't have an image">
                             <div class="details">
                                 <span class="companyName">{{ $job->company->company_name }}</span>
                                 <span class="location">- {{ $job->company->location }}</span>

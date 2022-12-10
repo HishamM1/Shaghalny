@@ -15,7 +15,9 @@
                     </ul>
                     <button class="toggle-menu"><i class="fa-solid fa-bars"></i></button>
                 @else
-                    <span>Welcome, {{ auth()->user()->company_name }}!</span>
+                    <span
+                        style="font-size:1em;font-weight:bold;background-color:#f6f6f6;border-radius:5px;padding:5px">Welcome,
+                        {{ auth()->user()->company_name }}!</span>
                     <ul class="links">
                         <a href="/dashboard/{{ auth()->user()->id }}">
                             <li class="btn btn-darkBlue">Dashboard</li>

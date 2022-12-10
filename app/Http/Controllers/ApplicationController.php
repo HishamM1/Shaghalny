@@ -29,7 +29,7 @@ class ApplicationController extends Controller
             'about_applier' => ['required', 'max:800'],
             'cv' => ['required', 'max:5048']
         ]);
-        $attributes['cv'] = $request->file('cv')->store('cvs', 'public');
+        $attributes['cv'] = request()->file('cv')->store('cvs', 'public');
         Application::create($attributes);
         return redirect('/')->with('success', 'Application has been sent!');
     }

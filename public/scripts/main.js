@@ -21,7 +21,7 @@ function randomizeImg() {
 }
 
 // Password Eye 
-var state = true
+let state = true
 function toggle() {
   let eye = document.getElementById("eye")
   let password = document.getElementById("password")

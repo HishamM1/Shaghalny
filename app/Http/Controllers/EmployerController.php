@@ -25,7 +25,7 @@ class EmployerController extends Controller
             'password' => ['required', Password::min(6)->mixedCase()],
             'image' => ['required', 'image', 'mimes:jpg,png,jpeg', 'max:5048']
         ]);
-        $attributes['image'] = $request->file('image')->store('images', 'public');
+        $attributes['image'] = request()->file('image')->store('images', 'public');
 
         $user = Company::create($attributes);
         auth()->login($user);
