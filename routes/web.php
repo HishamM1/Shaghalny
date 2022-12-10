@@ -35,7 +35,12 @@ Route::get('/logout', [LogController::class, 'logout'])->middleware('auth');
 
 Route::get('/appForm/{job}', [ApplicationController::class, 'show'])->middleware('guest');
 Route::post('/storeApplication', [ApplicationController::class, 'storeApplication'])->middleware('guest');
-// TO DO
-Route::get('/dashboard/{company}', [DashboardController::class, 'show'])->middleware('auth');
+
+Route::get('/dashboard/{company}', [DashboardController::class, 'show'])->middleware('auth')->name('dashboard');
 Route::get('/dashboard/delete/{job}', [DashboardController::class, 'delete'])->middleware('auth');
 Route::get('/dashboard/applications/{job}', [DashboardController::class, 'jobApplications']);
+Route::get('/dashboard/applications/delete/{application}', [DashboardController::class, 'deleteApplication'])->middleware('auth');
+Route::get('/dashboard/add/{company}', [DashboardController::class, 'addJob'])->middleware('auth');
+Route::post('/storeJob', [DashboardController::class, 'store'])->middleware('auth');
+Route::get('/dashboard/update/{job}', [DashboardController::class, 'showupdateJob'])->middleware('auth');
+Route::post('/updateJob/{job}', [DashboardController::class, 'update'])->middleware('auth');

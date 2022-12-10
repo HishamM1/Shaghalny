@@ -1,10 +1,9 @@
 // toggleMenu
 
 let toggleMenueButton = document.querySelector(".toggle-menu")
-console.log(toggleMenueButton)
 let links = document.querySelector(".links")
-toggleMenueButton.onclick = function (e) {
-    e.stopPropagation()
+
+toggleMenueButton.onclick = function () {
 
     this.classList.toggle("menu-active")
 
@@ -18,10 +17,7 @@ let landingPage = document.querySelector(".mainPage");
 function randomizeImg() {
   setInterval(() => {
     let randomNumber = Math.floor(Math.random() * imgArr.length);
-    landingPage.style.backgroundImage =
-      'url("Imgs/' + imgArr[randomNumber] + '")';
-    console.log(randomNumber)
-  }, 6000);
+    landingPage.style.backgroundImage = 'url("Imgs/' + imgArr[randomNumber] + '")'}, 6000);
 }
 
 // Password Eye 
@@ -53,5 +49,6 @@ for (i = 0; i < coll.length; i++) {
     } else {
       content.style.maxHeight = content.scrollHeight + "px";
     }
+    console.log(content.scrollHeight, content)
   });
 }

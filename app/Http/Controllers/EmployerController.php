@@ -17,7 +17,7 @@ class EmployerController extends Controller
     public function store(Request $request)
     {
         $attributes = request()->validate([
-            'company_name' => ['required', 'max:100'],
+            'company_name' => ['required', 'max:101'],
             'industry' => ['required', 'string', 'max:100'],
             'company_description' => ['required', 'max:400'],
             'location' => ['required', 'string', 'max:100'],

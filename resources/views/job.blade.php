@@ -30,7 +30,6 @@
                         <span class="location">{{ $job->company->location }} </span>
                     </div>
                     <div class="date">Posted {{ $job->created_at->diffForHumans() }}</div>
-                    {{-- <div class="openedJobs"><span>80</span> Applicants for 1 Open Position</div> --}}
                 </div>
                 @guest
                     <a href="/appForm/{{ $job->id }}" class="applyBtn">Apply For Job</a>

@@ -13,6 +13,12 @@
     <link rel="stylesheet" href="/styles/login.css" />
     <title>Login</title>
 </head>
+<style>
+    .error {
+        color: red;
+        font-size: 12px;
+    }
+</style>
 
 <body>
     <div class="login">

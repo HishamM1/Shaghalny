@@ -27,7 +27,8 @@
                         {{ $job->title }} - {{ $job->type }}
                         <img src="Imgs/{{ $job->company->image }}" alt="">
                     </div>
-                    <div class="message">The hiring team at ({{ $job->company->company_name }}) requires you to answer
+                    <div class="message">The hiring team at (<span
+                            style="color:#ff5f00">{{ $job->company->company_name }}</span>) requires you to answer
                         the below questions.</div>
 
                     <form action="/storeApplication" method="post" enctype="multipart/form-data">

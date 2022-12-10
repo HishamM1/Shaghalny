@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Job extends Model
 {
     protected $table = 'jobs';
+    protected $guarded = [];
     use HasFactory;
     public function scopeFilter($query, array $filters)
     {
