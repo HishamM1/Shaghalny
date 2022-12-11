@@ -44,3 +44,5 @@ Route::get('/dashboard/add/{company}', [DashboardController::class, 'addJob'])->
 Route::post('/storeJob', [DashboardController::class, 'store'])->middleware('auth');
 Route::get('/dashboard/update/{job}', [DashboardController::class, 'showupdateJob'])->middleware('auth');
 Route::post('/updateJob/{job}', [DashboardController::class, 'update'])->middleware('auth');
+
+Route::get('/download/cvs/{file}', [ApplicationController::class, 'download'])->middleware('auth')->name('download');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Application;
 use App\Models\Job;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\Password;
@@ -32,5 +33,9 @@ class ApplicationController extends Controller
         $attributes['cv'] = request()->file('cv')->store('cvs', 'public');
         Application::create($attributes);
         return redirect('/')->with('success', 'Application has been sent!');
+    }
+    public function download($file)
+    {
+        return response()->download(storage_path('app/public/cvs/' . $file));
     }
 }
