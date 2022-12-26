@@ -1,6 +1,5 @@
-
-.mainPage{
-    background: url("../Imgs/landingPage-1.jpg") no-repeat center center fixed; 
+.mainPage {
+    background: url("../Imgs/landingPage-1.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -9,30 +8,31 @@
 }
 
 /* Start landingPage */
-.landingPage{
-    height: calc(98vh - 12.6vh);
+.landingPage {
+    height: calc(100vh - 117px);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.landingPage .content{
-    padding:70px;
+.landingPage .content {
+    padding: 70px;
     margin-inline: 40px;
 }
 
-@media(max-width:425px){ 
-    .landingPage .content{
+@media(max-width:425px) {
+    .landingPage .content {
         padding: 0;
     }
 }
 
-.landingPage .content p{
+.landingPage .content p {
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 10px;
 }
+
 .landingPage .searchBar {
     display: flex;
     align-items: center;
@@ -40,7 +40,7 @@
     position: relative;
 }
 
-.landingPage .searchBar i{
+.landingPage .searchBar i {
     position: absolute;
     background-color: transparent;
     color: var(--main-color);
@@ -50,7 +50,7 @@
     transform: translateY(-50%);
 }
 
-.landingPage .searchBar input{
+.landingPage .searchBar input {
     width: 100%;
     padding-block: 20px;
     padding-left: 50px;
@@ -60,28 +60,29 @@
     border-radius: 5px;
 }
 
-.landingPage .searchBar input::placeholder{
+.landingPage .searchBar input::placeholder {
     font-size: 20px;
 }
 
-.landingPage .searchBar input:focus{
+.landingPage .searchBar input:focus {
     outline: none;
 }
-.landingPage .searchBar .availableJobs{
+
+.landingPage .searchBar .availableJobs {
     position: absolute;
-    right: 20%;
+    right: 25%;
     color: #ccc;
     top: 50%;
     transform: translateY(-50%);
 }
 
 @media (max-width:1070px) {
-    .landingPage .searchBar .availableJobs{
+    .landingPage .searchBar .availableJobs {
         display: none;
     }
 }
 
-.landingPage .searchBar .submitBtn{
+.landingPage .searchBar .submitBtn {
     position: absolute;
     right: 0;
     top: 50%;
@@ -94,13 +95,14 @@
     background-color: var(--main-color);
 }
 
-.landingPage .searchBar .submitBtn a{
+.landingPage .searchBar .submitBtn a {
     color: white;
 }
 
-@media(max-width:650px){
-    .landingPage .searchBar .submitBtn{
+@media(max-width:650px) {
+    .landingPage .searchBar .submitBtn {
         display: none;
     }
 }
+
 /* End landingPage */

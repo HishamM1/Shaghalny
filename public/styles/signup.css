@@ -10,7 +10,6 @@
     color: white;
     padding-inline: 200px;
     padding-block: 30px;
-    height: 100vh;
 }
 
 @media(max-width:1500px){
@@ -23,10 +22,6 @@
     .signup .signupContainer{
         padding-inline: 30px;
     }
-}
-
-.signup .signupContainer .logoContainer{
-    margin-bottom: 50px;
 }
 
 .signup .signupContainer .content{

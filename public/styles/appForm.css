@@ -1,85 +1,99 @@
-body{
+body {
     background-color: #f6f6f6;
 }
 
 /* Navbar */
-.navbar{
+.navbar {
     padding: 20px;
 }
 
 .navbar .container .toggle-menu.menu-active::before {
     bottom: -12px;
     left: 3px;
-  }
-  @media (max-width: 768px) {
-    .navbar .container .links.open {
-      display: block;
-      background-color: #fff;
-      padding: 10px;
-      position: absolute;
-      right: 20px;
-      top: 69px;
-      width:90%;
-      border-radius: 4px;
-    }
-  }
+}
 
-.container{
+@media (max-width: 768px) {
+    .navbar .container .links.open {
+        display: block;
+        background-color: #fff;
+        padding: 10px;
+        position: absolute;
+        right: 20px;
+        top: 69px;
+        width: 90%;
+        border-radius: 4px;
+    }
+}
+
+.container {
     padding-inline: 12rem;
     margin-inline: auto;
-}
-
-@media(max-width:1350px){
-    .container{
-        padding-inline: 6rem;
-    }
-}
-@media(max-width:1150px){
-    .container{
-        padding-inline: 1rem;
-    }
-}
-
-.container{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.appForm .container{
+@media(max-width:1350px) {
+    .container {
+        padding-inline: 6rem;
+    }
+}
+
+@media(max-width:1150px) {
+    .container {
+        padding-inline: 1rem;
+    }
+}
+
+.appForm .container {
     height: 90vh;
 }
-.appForm .container .card{
+
+.appForm .container .card {
     background-color: white;
     border-radius: 10px;
     max-width: 800px;
+    text-transform: capitalize;
 }
-.appForm .container .cardHeader{
+
+.appForm .container .cardHeader {
     background-color: var(--third-color);
     padding: 15px;
     color: white;
     border-radius: 10px;
 }
-.appForm .container .cardBody{
+
+.appForm .container .cardBody {
     padding: 15px;
     border-radius: 10px;
 }
-.appForm .container .cardBody .jobName{
+
+.appForm .container .cardBody .jobName {
     font-size: 20px;
     font-weight: bold;
     display: flex;
     justify-content: space-between;
 }
-.appForm .container .cardBody .message{
+
+.appForm .container .cardBody .message {
     font-size: 15px;
     color: rgb(77, 97, 130);
     margin-block: 10px 20px;
 }
-.appForm .cardBody img{
-    width: 100px;
-    height: 30px;
+
+.appForm .cardBody form input {
+    margin: 10px 0px 10px;
+    padding: 4px;
+    width: 100%;
 }
-.appForm .cardBody form textarea{
+
+.appForm .cardBody form select {
+    width: 100%;
+    margin: 10px 0px 10px;
+    padding: 4px;
+}
+
+.appForm .cardBody form textarea {
     display: block;
     width: 100%;
     margin-top: 20px;
@@ -87,25 +101,36 @@ body{
     resize: none;
     padding: 10px;
     border: 2px solid #ccc;
-    outline: none;
 }
-.appForm .cardBody form textarea::placeholder{
+
+.appForm .cardBody form textarea::placeholder {
     color: rgb(185, 188, 194);
 }
-.appForm .cardBody form .question{
+
+.appForm .cardBody form .question {
     margin-bottom: 20px;
 }
-.appForm .cardBody form .question label:first-child{
+
+.appForm .cardBody form .question label:first-child {
     display: block;
     margin-bottom: 10px;
 }
-.appForm .cardBody form .question .radioBtns{
+
+.appForm .cardBody form .question .radioBtns {
     display: flex;
 }
-.appForm .cardBody form .question .radioBtns label{
+
+.appForm .cardBody form .question .radioBtns input {
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.appForm .cardBody form .question .radioBtns label {
     margin-inline: 4px 20px;
 }
-.appForm .cardBody form input[type=submit]{
-   font-size: 15px;
-   background-color: var(--third-color);
+
+.appForm .cardBody form input[type=submit] {
+    font-size: 15px;
+    background-color: var(--third-color);
 }
