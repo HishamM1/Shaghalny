@@ -10,4 +10,9 @@ class Category extends Model
     protected $table = 'categories';
     public $timestamps = false;
     use HasFactory;
+
+    public function jobs()
+    {
+        return $this->hasMany(Job::class);
+    }
 }

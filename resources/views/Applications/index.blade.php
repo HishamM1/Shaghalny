@@ -42,10 +42,10 @@
 
     <div class="container">
         <div class="welcome">
-            <h2>Applications for <span style="color: #ff5f00">{{ $jobTitle }}</span></h2>
+            <h2>Applications for <span style="color: #ff5f00">{{ $job_title }}</span></h2>
         </div>
         <div class="return">
-            <a href="/dashboard/{{ auth()->user()->id }}" class="btn btn-primary">Return</a>
+            <a href="{{route("dashboard.index")}}" class="btn btn-primary">Return</a>
         </div>
 
         <div class="container">
@@ -68,10 +68,14 @@
                         <td>{{ $application->created_at->diffForHumans() }}</td>
                         <td>{{ $application->finished_military }}</td>
                         <td>{{ $application->about_applier }}</td>
-                        <td><a href="/download/{{ $application->cv }}" class="btn btn-primary">Download</a>
+                        <td><a href="{{ $application->cv }}" download class="btn btn-primary">Download</a>
                         </td>
                         <td>
-                            <a href="delete/{{ $application->id }}" class="btn btn-danger">Delete</a>
+                            <form action="{{ route("jobs.applications.destroy", [$job_id, $application->id]) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

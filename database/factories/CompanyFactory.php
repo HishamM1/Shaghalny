@@ -20,9 +20,10 @@ class CompanyFactory extends Factory
             'company_name' => fake()->company(),
             'industry' => fake()->word(),
             'company_email' => fake()->unique()->companyEmail(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => 'password', // password
             'location' => fake()->country(),
-            'company_description' => fake()->paragraph()
+            'company_description' => fake()->paragraph(),
+            'image' => fake()->imageUrl()
         ];
     }
 }

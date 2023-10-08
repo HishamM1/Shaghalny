@@ -42,7 +42,7 @@
                     <h2>Trusted by over 25,000 companies</h2>
                 </div>
                 <div class="right">
-                    <form method="POST" action="/employer" class="signupform" enctype="multipart/form-data">
+                    <form method="POST" action="{{route("register.store")}}" class="signupform" enctype="multipart/form-data">
                         @csrf
                         <p>Create a Company Account to Start Hiring Now</p>
                         <div class="firstName">

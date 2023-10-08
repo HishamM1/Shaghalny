@@ -31,7 +31,7 @@
                             style="color:#ff5f00">{{ $job->company->company_name }}</span>) requires you to answer
                         the below questions.</div>
 
-                    <form action="/storeApplication" method="post" enctype="multipart/form-data">
+                    <form action="{{route("jobs.applications.store", $job->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <input type="text" value="{{ $job->id }}" name="job_id" hidden>
                         <div>
@@ -65,6 +65,8 @@
                                 <label for="Yes">Yes</label><br>
                                 <input type="radio" id="No" name="finished_military" value="No">
                                 <label for="No">No</label><br>
+                                <input type="radio" id="exempt" name="finished_military" value="exempt">
+                                <label for="exempt">exempt</label><br>
                             </div>
                         </div>
                         @error('finished_military')

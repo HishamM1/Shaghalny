@@ -9,22 +9,20 @@
                         <a href="/login">
                             <li class="btn btn-danger">Login</li>
                         </a>
-                        <a href="/employer">
+                        <a href="{{route("register.create")}}">
                             <li class="btn btn-darkBlue">Employer?</li>
                         </a>
                     </ul>
                     <button class="toggle-menu"><i class="fa-solid fa-bars"></i></button>
                 @else
-                    <span
-                        style="font-size:1em;font-weight:bold;background-color:#f6f6f6;border-radius:5px;padding:5px">Welcome,
-                        {{ auth()->user()->company_name }}!</span>
                     <ul class="links">
-                        <a href="/dashboard/{{ auth()->user()->id }}">
+                        <a href="{{route('dashboard.index')}}">
                             <li class="btn btn-darkBlue">Dashboard</li>
                         </a>
-                        <a href="/logout">
-                            <li class="btn btn-danger">Log out</li>
-                        </a>
+                        <form action="{{ route('logout') }}" method="post">
+                            @csrf
+                            <button class="btn btn-danger" type="submit">Logout</button>
+                        </form>
 
                     </ul>
                     <button class="toggle-menu"><i class="fa-solid fa-bars"></i></button>

@@ -30,22 +30,5 @@ class DatabaseSeeder extends Seeder
             'company_id' => $company2->id,
             'category_id' => $category2->id
         ]);
-        // Application::factory(10)->create([
-        //     'job_id' => $job1->id
-        // ]);
-        // Application::factory(10)->create([
-        //     'job_id' => $job2->id
-        // ]);
-
-
-        // $user = User::factory()->create([
-        //     'name' => 'Hisham Medhat'
-        // ]);
-
-        // Post::factory(5)->create(
-        //     [
-        //         'user_id' => $user->id
-        //     ]
-        // );
     }
 }

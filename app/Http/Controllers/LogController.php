@@ -2,22 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Redirector;
 use Illuminate\Validation\ValidationException;
 
 class LogController extends Controller
 {
-    public function view()
+    public function show()
     {
-        return view('login');
+        return view('Login/index');
     }
 
-    public function login()
+    public function login(Request $request)
     {
-        $user = request()->validate([
+        $user = $request->validate([
             'company_email' => ['required', 'email'],
             'password' => ['required']
         ]);
@@ -26,7 +23,7 @@ class LogController extends Controller
         }
         //to handle session fixation
         session()->regenerate();
-        return redirect('/');
+        return redirect()->route('dashboard.index');
     }
     public function logout()
     {

@@ -40,7 +40,7 @@
             <h2>Welcome Back!</h2>
         </div>
         <div class="add-job">
-            <a href="add/{{ auth()->user()->id }}" class="btn btn-danger">Add New Job</a>
+            <a href="{{route("jobs.create")}}" class="btn btn-danger">Add New Job</a>
         </div>
         <div class="container">
             <table class="table">
@@ -56,10 +56,14 @@
                         <td>{{ $job->type }}</td>
                         <td>{{ $job->created_at->diffForHumans() }}</td>
                         <td>
-                            <a href="/job/{{ $job->id }}" class="btn btn-primary">View</a>
-                            <a href="applications/{{ $job->id }}" class="btn btn-primary">Applications</a>
-                            <a href="update/{{ $job->id }}" class="btn btn-primary">Update</a>
-                            <a href="delete/{{ $job->id }}" class="btn btn-danger">Delete</a>
+                            <a href="{{ route("jobs.show", $job->id)}}" class="btn btn-primary">View</a>
+                            <a href="{{ route("jobs.applications.index", $job->id) }}" class="btn btn-primary">Applications</a>
+                            <a href="{{ route("jobs.edit", $job->id)}}" class="btn btn-primary">Update</a>
+                            <form action="{{ route("jobs.destroy", $job->id)}}" method="POST">
+                                @csrf
+                                @method("DELETE")
+                                <button class="btn btn-danger" type="submit">Delete</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

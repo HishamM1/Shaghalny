@@ -1,10 +1,10 @@
 <?php
 
 use App\Http\Controllers\JobController;
-use App\Http\Controllers\EmployerController;
 use App\Http\Controllers\LogController;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Job;
 
@@ -20,29 +20,16 @@ use App\Models\Job;
 */
 
 Route::get('/', function () {
-    return view('mainPage', ['jobscount' => Job::count()]);
+    return view('index', ['jobs_count' => Job::count()]);
 });
 
-Route::get('/jobs', [JobController::class, 'search']);
-Route::get('/job/{job}', [JobController::class, 'show']);
+Route::resource('jobs', JobController::class);
+Route::resource('jobs.applications', ApplicationController::class)->except(['show']);
 
-Route::get('/employer', [EmployerController::class, 'create'])->middleware('guest');
-Route::post('/employer', [EmployerController::class, 'store'])->middleware('guest');
+Route::resource('register', RegisterController::class)->only(['create','store']);
 
-Route::get('/login', [LogController::class, 'view'])->middleware('guest');
+Route::get('/login', [LogController::class, 'show'])->middleware('guest');
 Route::post('/login', [LogController::class, 'login'])->middleware('guest');
-Route::get('/logout', [LogController::class, 'logout'])->middleware('auth');
+Route::post('/logout', [LogController::class, 'logout'])->middleware('auth')->name('logout');
 
-Route::get('/appForm/{job}', [ApplicationController::class, 'show'])->middleware('guest');
-Route::post('/storeApplication', [ApplicationController::class, 'storeApplication'])->middleware('guest');
-
-Route::get('/dashboard/{company}', [DashboardController::class, 'show'])->middleware('auth')->name('dashboard');
-Route::get('/dashboard/delete/{job}', [DashboardController::class, 'delete'])->middleware('auth');
-Route::get('/dashboard/applications/{job}', [DashboardController::class, 'jobApplications']);
-Route::get('/dashboard/applications/delete/{application}', [DashboardController::class, 'deleteApplication'])->middleware('auth');
-Route::get('/dashboard/add/{company}', [DashboardController::class, 'addJob'])->middleware('auth');
-Route::post('/storeJob', [DashboardController::class, 'store'])->middleware('auth');
-Route::get('/dashboard/update/{job}', [DashboardController::class, 'showupdateJob'])->middleware('auth');
-Route::post('/updateJob/{job}', [DashboardController::class, 'update'])->middleware('auth');
-
-Route::get('/download/cvs/{file}', [ApplicationController::class, 'download'])->middleware('auth')->name('download');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard.index');

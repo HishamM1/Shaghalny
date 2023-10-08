@@ -23,7 +23,7 @@
                 <div class="cardBody">
                     <div class="btns">
                         <button class="jobTypeBtn">{{ $job->category->category_name }}</button>
-                        <img src="/storage/{{ $job->company->image }}" alt="Company doesn't have an image">
+                        <img src="{{ $job->company->image }}" alt="Company doesn't have an image">
                     </div>
                     <div class="details">
                         <span class="companyName">{{ $job->company->company_name }}</span> -
@@ -32,7 +32,7 @@
                     <div class="date">Posted {{ $job->created_at->diffForHumans() }}</div>
                 </div>
                 @guest
-                    <a href="/appForm/{{ $job->id }}" class="applyBtn">Apply For Job</a>
+                    <a href="{{route("jobs.applications.create", $job->id)}}" class="applyBtn">Apply For Job</a>
                 @endguest
             </div>
             <div class="jobDetails">

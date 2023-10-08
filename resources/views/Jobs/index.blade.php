@@ -133,12 +133,12 @@
                                         <input type="hidden" name="country[]" value="{{ $country }}">
                                     @endforeach
                                 @endif
-                                @foreach ($jobtypes as $jobtype)
+                                @foreach ($job_types as $job_type)
                                     <div class="check-box">
                                         <input type="checkbox" id="typecheckbox{{ $loop->iteration }}" name="type[]"
-                                            @if (request('type') != null) @foreach (request('type') as $job) {{ $jobtype === $job ? 'checked' : '' }} @endforeach @endif
-                                            value="{{ $jobtype }}" onChange="this.form.submit()">
-                                        <label for="typecheckbox{{ $loop->iteration }}">{{ $jobtype }}</label>
+                                            @if (request('type') != null) @foreach (request('type') as $job) {{ $job_type === $job ? 'checked' : '' }} @endforeach @endif
+                                            value="{{ $job_type }}" onChange="this.form.submit()">
+                                        <label for="typecheckbox{{ $loop->iteration }}">{{ $job_type }}</label>
                                     </div>
                                 @endforeach
                             </form>
@@ -148,8 +148,8 @@
                 <div class="jobsSection">
                     @foreach ($jobs as $job)
                         <div class="box">
-                            <a href="/job/{{ $job->id }}"class="title">{{ $job->title }}</a>
-                            <img src="/storage/{{ $job->company->image }}" alt="Company doesn't have an image">
+                            <a href="{{ route("jobs.show", $job->id)}}"class="title">{{ $job->title }}</a>
+                            <img src="{{ $job->company->image }}" alt="Company doesn't have an image">
                             <div class="details">
                                 <span class="companyName">{{ $job->company->company_name }}</span>
                                 <span class="location">- {{ $job->company->location }}</span>

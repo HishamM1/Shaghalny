@@ -24,7 +24,7 @@
                 <form action="/jobs/" method="GET"class="searchBar">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="text" name="search" placeholder="Search Jobs(e.g. Senior PHP Developer)" />
-                    <div class="availableJobs">{{ $jobscount }} Open Jobs</div>
+                    <div class="availableJobs">{{ $jobs_count }} Open Jobs</div>
                     <button type="submit" class="btn submitBtn">Search Jobs</button>
                 </form>
             </div>
