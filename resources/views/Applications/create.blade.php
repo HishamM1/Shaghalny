@@ -81,7 +81,7 @@
                         @enderror
                         <div>
                             <label for="">CV:</label>
-                            <input type="file" name="cv" required style="margin: 10px 0px 10px;padding:4px">
+                            <input type="file" name="cv" required style="margin: 10px 0px 10px;padding:4px" accept=".pdf">
                         </div>
                         @error('cv')
                             <span class="error">{{ $message }}</span>

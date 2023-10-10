@@ -24,7 +24,7 @@
     <div class="login">
         <div class="loginContainer">
             <div class="logoContainer">
-                <a href="/" class="logo">Shaghalny</a>
+                <a href="{{route('dashboard.index')}}" class="logo">Shaghalny</a>
             </div>
             <form method="POST" action="/login" class="loginForm">
                 @csrf
@@ -49,7 +49,7 @@
                     <a href="#">Forgot password?</a>
                 </div>
                 <hr>
-                <div class="footer">New to Shaghalny? <a href="/employer" class="joinNowBtn">Join Now</a></div>
+                <div class="footer">New to Shaghalny? <a href="{{route('register.create')}}" class="joinNowBtn">Join Now</a></div>
             </form>
         </div>
     </div>

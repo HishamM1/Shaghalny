@@ -19,7 +19,7 @@ class RegisterController extends Controller
             'industry' => ['required', 'string', 'max:100'],
             'company_description' => ['required', 'max:400'],
             'location' => ['required', 'string', 'max:100'],
-            'company_email' => ['required', 'email', 'unique:companies,email'],
+            'company_email' => ['required', 'email', 'unique:companies,company_email'],
             'password' => ['required', Password::min(6)->mixedCase()],
             'image' => ['nullable', 'image', 'mimes:jpg,png,jpeg', 'max:5048']
         ]);

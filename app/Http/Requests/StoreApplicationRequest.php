@@ -24,13 +24,13 @@ class StoreApplicationRequest extends FormRequest
     public function rules()
     {
         return [
-            'job_id' => ['required', 'exists:categories,id'],
+            'job_id' => ['required', 'exists:jobs,id'],
             'full_name' => ['required', 'string'],
             'number' => ['required', 'numeric', 'digits:11'],
             'email' => ['required', 'email'],
             'finished_military' => ['required'],
             'about_applier' => ['required', 'max:800'],
-            'cv' => ['required', 'max:10024']
+            'cv' => ['required', 'max:10024', 'mimes:pdf']
         ];
     }
 }

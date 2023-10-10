@@ -1,98 +1,105 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
-:root{
-    --main-color:#FF5F00;
-    --secondary-color:#B20600;
-    --third-color:#00092C;
+:root {
+    --main-color: #ff5f00;
+    --secondary-color: #b20600;
+    --third-color: #00092c;
 }
 
-ul{
+ul {
     list-style-type: none;
 }
 
-a{
+a {
     text-decoration: none;
     cursor: pointer;
     color: white;
 }
 
+img {
+    width: 10% !important;
+    height: auto !important;
+    border-radius: 10px;
+}
+
 /* Custom Buttons */
 
-.btn{
+.btn {
     padding: 6px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
     color: white;
+    font-size: 16px;
 }
 
-.btn-primary{
+.btn-primary {
     background-color: #0046b2;
 }
 
-.btn-primary:hover{
+.btn-primary:hover {
     background-color: #0047b2da;
 }
 
-.btn-success{
+.btn-success {
     background-color: #34ac79;
 }
 
-.btn-success:hover{
+.btn-success:hover {
     background-color: #34ac7ab6;
 }
 
-.btn-danger{
-    background-color: #B20600;
+.btn-danger {
+    background-color: #b20600;
 }
 
-.btn-danger:hover{
-    background-color: #B20600;
+.btn-danger:hover {
+    background-color: #b20600;
 }
 
-.btn-warning{
+.btn-warning {
     background-color: #ffca2c;
 }
 
-.btn-warning:hover{
+.btn-warning:hover {
     background-color: #ffca2ca8;
 }
 
-.btn-dark{
+.btn-dark {
     background-color: black;
 }
 
-.btn-dark:hover{
+.btn-dark:hover {
     background-color: rgba(0, 0, 0, 0.671);
 }
 
-.btn-light{
+.btn-light {
     background-color: #e0e0e0;
 }
 
-.btn-light:hover{
+.btn-light:hover {
     background-color: #e0e0e0a6;
 }
 
-.btn-darkBlue{
-    background-color: #00092C;
+.btn-darkBlue {
+    background-color: #00092c;
 }
 
-.btn-darkBlue:hover{
-    background-color: #00092C;
+.btn-darkBlue:hover {
+    background-color: #00092c;
 }
 
-.container{
+.container {
     padding-inline: 50px;
     margin-inline: auto;
 }
 
-.logo{
+.logo {
     cursor: pointer;
     font-size: 30px;
     font-weight: bold;
@@ -100,41 +107,52 @@ a{
 }
 
 /* Start NavBar */
-.navbar{
+.navbar {
     padding: 40px;
 }
 
-.navbar .container{
+.navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
- @media(max-width:425px){ 
-    .navbar .container{
+@media (max-width: 425px) {
+    .navbar .container {
         padding-left: 10px;
         padding-right: 10px;
     }
 }
 
-.navbar .container .links{
+.navbar .container .links {
     display: flex;
     align-items: center;
+    gap: 5px;
 }
 
-.navbar .container .links li{
+.table tr td:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.navbar .container .links li {
     margin-left: 20px;
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
     color: white;
 }
 
-.navbar .container .toggle-menu{
+.navbar .container .links button {
+    font-size: 16px;
+}
+
+.navbar .container .toggle-menu {
     display: none;
     color: black;
     cursor: pointer;
     font-size: 30px;
-    background-color:transparent;
+    background-color: transparent;
     border: none;
     position: relative;
 }
@@ -146,25 +164,25 @@ a{
     border-color: transparent transparent white transparent;
     bottom: -12px;
     left: 3px;
-  }
+}
 
 @media (max-width: 768px) {
     .navbar .container .links {
-      display: none;
+        display: none;
     }
     .navbar .container .toggle-menu {
-      display: block;
+        display: block;
     }
     .navbar .container .links.open {
-      display: block;
-      background-color: #fff;
-      padding: 10px;
-      position: absolute;
-      right: 20px;
-      top: 89px;
-      width:90%;
-      border-radius: 4px;
-      z-index: 100;
+        display: block;
+        background-color: #fff;
+        padding: 10px;
+        position: absolute;
+        right: 20px;
+        top: 89px;
+        width: 90%;
+        border-radius: 4px;
+        z-index: 100;
     }
     .navbar .container .links.open li {
         display: block;
@@ -175,15 +193,14 @@ a{
         font-weight: bold;
         transition: 0.2s;
     }
-    .navbar .container .links.open li:hover{
+    .navbar .container .links.open li:hover {
         margin-left: 20px;
         background-color: rgb(241, 241, 241);
     }
-    
-  }
+}
 /* End NavBar */
 
-.jobTypeBtn{
+.jobTypeBtn {
     background-color: rgb(226, 226, 226);
     border: none;
     outline: none;
