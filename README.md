@@ -8,25 +8,24 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to run the website
 ```
 PHP
 Composer
 Laravel
+MySQL
 ```
 
-### Cloning
+## Run these commands to run locally
 
 
 ```
-1. Open your command line
-2.Run git clone https://github.com/HishamM1/Shaghalny
-3.Run composer install
-4.Run cp .env.example .env
-5.Run php artisan key:generate
-6.Run php artisan migrate
-7.Run php artisan serve
-8.Go to link localhost:8000
+- Open your command line
+- git clone https://github.com/HishamM1/Shaghalny
+- composer install
+- cp .env.example .env
+- php artisan key:generate
+- php artisan migrate
+- php artisan serve
 ```
 
 
